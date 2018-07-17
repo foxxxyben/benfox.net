@@ -1,4 +1,4 @@
-baseurl = "https://benfox.net/"
+baseurl = "/"
 languageCode = "en-us"
 title = "Strata"
 theme = "hugo-strata-theme"
