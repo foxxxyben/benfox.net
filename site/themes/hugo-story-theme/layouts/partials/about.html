@@ -1,0 +1,19 @@
+<section>
+	<header class="banner style{{ .style }} orient-{{ .orientation }} content-align-left image-position-center onscroll-image-fade-in">
+		{{ with .title }}<h2>{{ . | markdownify }}</h2>{{ end }}
+	</header>
+	{{ with .content }}<p>{{ . | markdownify }}</p>{{ end }}
+	<div class="image">
+    <img src="{{ $.Site.BaseURL }}images/{{ .image }}" alt="" />
+</section>
+
+{{ range .Site.Params.about.blurb }}
+<section>
+	<header class="spotlight style1 orient-{{ .orientation }} content-align-left image-position-center onscroll-image-fade-in">
+		{{ with .title }}<h2>{{ . | markdownify }}</h2>{{ end }}
+	</header>
+	{{ with .content }}<p>{{ . | markdownify }}</p>{{ end }}
+	<div class="image">
+    <img src="{{ $.Site.BaseURL }}images/{{ .image }}" alt="" />
+</section>
+{{ end }}
