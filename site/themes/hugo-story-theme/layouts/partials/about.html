@@ -5,7 +5,7 @@
 		<p class="major">{{ .content | markdownify }}</p>
 	</div>
 	<div class="image">
-		<img src="{{ .image }}" alt="" />
+		<img src="{{ .Params.image }}" alt="" />
 	</div>
 </section>
 {{ end }}
