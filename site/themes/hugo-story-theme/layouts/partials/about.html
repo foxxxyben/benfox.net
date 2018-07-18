@@ -1,19 +1,11 @@
-<section>
-	<header class="banner style{{ .style }} orient-{{ .orientation }} content-align-left image-position-center onscroll-image-fade-in">
-		<h2>{{ .title | markdownify }}</h2>
-	</header>
-		<p>{{ .content | markdownify }}</p>
+{{ range where .Site.Pages "Section" "about" }}
+<section class="{{ if eq .weight 0 }}banner{{else}}spotlight{{Send}} style1 orient-{{ if modBool .weight 2}}left{{else}}right{{end}} content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+	<div class="content">
+		<h1>{{ .title }}</h1>
+		<p class="major">{{ .content | markdownify }}</p>
+	</div>
 	<div class="image">
-    <img src="{{ $.Site.BaseURL }}images/{{ .image }}" alt="" />
-</section>
-
-{{ range .Site.Params.about.blurb }}
-<section>
-	<header class="spotlight style1 orient-{{ .orientation }} content-align-left image-position-center onscroll-image-fade-in">
-		<h2>{{ .title | markdownify }}</h2>
-	</header>
-		<p>{{ .content | markdownify }}</p>
-	<div class="image">
-    <img src="{{ $.Site.BaseURL }}images/{{ .image }}" alt="" />
+		<img src="{{ .image }}" alt="" />
+	</div>
 </section>
 {{ end }}
