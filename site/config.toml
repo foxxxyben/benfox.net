@@ -25,35 +25,35 @@ paginate = 10
 	custom_css  = []
 
 	[params.about]
-		hide  = false
-		style = "1"
-		title = "Hello, my name is Ben Fox"
-		content = "I am a <a href="https://apps.ibcces.org/badges/v/65d52" target="_blank">Certified Autism Specialist</a> offering professional consulting services to families, schools, community organizations, and service providers to help develop social skills education programs to serve the needs of children and young adults with ASDs in Eastern Washington."
-		image = "about/benfox.jpg"
-		orientation = "left"
+	  hide  = false
+	  style = "1"
+	  title = "Hello, my name is Ben Fox"
+	  content = "I am a [Certified Autism Specialist](https://apps.ibcces.org/badges/v/65d52) offering professional consulting services to families, schools, community organizations, and service providers to help develop social skills education programs to serve the needs of children and young adults with ASDs in Eastern Washington."
+	  image = "about/benfox.jpg"
+	  orientation = "left"
 
 
-		[[params.about.blurb]]
-		style = "1"
-		title = "In 2005 I began my consulting career in New York..."
-		content = "where I helped kickstart a collaboration between District 75 and <a href="http://www.grasp.org" target="_blank">G.R.A.S.P.</a>, an organization dedicated to providing peer-based supports to people on the Autism Spectrum. After the success of this pilot program, I spent the next few years providing training and staff support to teachers and administrators throughout the NYC Public Schools System. Some of this work has been profiled in an <a href="http://reader.mediawiremobile.com/epmagazine/issues/203090/viewer?page=21" target="_blank">Exceptional Parent Magazine</a> article highlighting the benefits of peer support groups in schools."
-		image = "about/nyc.jpg"
-		orientation = "right"
+	  [[params.about.blurb]]
+	  style = "1"
+	  title = "In 2005 I began my consulting career in New York..."
+	  content = "where I helped kickstart a collaboration between District 75 and [G.R.A.S.P.](http://www.grasp.org), an organization dedicated to providing peer-based supports to people on the Autism Spectrum. After the success of this pilot program, I spent the next few years providing training and staff support to teachers and administrators throughout the NYC Public Schools System. Some of this work has been profiled in an [Exceptional Parent Magazine](http://reader.mediawiremobile.com/epmagazine/issues/203090/viewer?page=21) article highlighting the benefits of peer support groups in schools."
+	  image = "about/nyc.jpg"
+	  orientation = "right"
 
-		[[params.about.blurb]]
-		style = "1"
-		title = "That same year I started my Private Practice in Brooklyn..."
-		content = "where I combined the successes of peer-based social skills programs with research-based ABA and Floortime methodologies to develop inclusive <b>Facilitated Social Play</b> programs, where children with Autism or other social learning disorders can learn from "social expert" peers through play. These sessions are facilitated by professionals with advanced Autism training and experience with other complementary interventions. My role is to provide ongoing training, playspace design, program, and professional development to help transform experts accustomed to intensive, 1-on-1 therapeutic settings, into community organizers and volunteer recruiters. I have consulted and worked with families, in-home service providers, private schools and early intervention centers, to help build successful programs <i>and meaningful friendships</i> for children with ASD, that have lasted and grown with them for years."
-		image = "about/playground.jpg"
-		orientation = "left"
+	  [[params.about.blurb]]
+	  style = "1"
+	  title = "That same year I started my Private Practice in Brooklyn..."
+	  content = "where I combined the successes of peer-based social skills programs with research-based ABA and Floortime methodologies to develop inclusive <b>Facilitated Social Play</b> programs, where children with Autism or other social learning disorders can learn from "social expert" peers through play. These sessions are facilitated by professionals with advanced Autism training and experience with other complementary interventions. My role is to provide ongoing training, playspace design, program, and professional development to help transform experts accustomed to intensive, 1-on-1 therapeutic settings, into community organizers and volunteer recruiters. I have consulted and worked with families, in-home service providers, private schools and early intervention centers, to help build successful programs <i>and meaningful friendships</i> for children with ASD, that have lasted and grown with them for years."
+	  image = "about/playground.jpg"
+	  orientation = "left"
 
 
-		[[params.about.blurb]]
-		style = "1"
-		title = "And now I am offering my skills and services to the families and communities of the Pacific Northwest"
-		content = "After living and farming in the Tri-Cities for years I have relaunched my practice to better meet the needs of the surrounding communities. In addition to providing training, seminars, consulting and program development for Facilitated Social Play groups, I am also seeking opportunities to collaborate with local schools and community organizations to build innovative, inclusive programs to help children and young adults with Autism find their Awesome."
-		image = "about/tricities.jpg"
-		orientation = "right"
+	  [[params.about.blurb]]
+	  style = "1"
+	  title = "And now I am offering my skills and services to the families and communities of the Pacific Northwest"
+	  content = "After living and farming in the Tri-Cities for years I have relaunched my practice to better meet the needs of the surrounding communities. In addition to providing training, seminars, consulting and program development for Facilitated Social Play groups, I am also seeking opportunities to collaborate with local schools and community organizations to build innovative, inclusive programs to help children and young adults with Autism find their Awesome."
+	  image = "about/tricities.jpg"
+	  orientation = "right"
 
 
 	[params.portfolio]
