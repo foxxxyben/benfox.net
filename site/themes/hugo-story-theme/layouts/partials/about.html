@@ -1,4 +1,4 @@
-{{ range where .Site.Pages "Section" "about" }}
+{{ range where .Data.Pages "Section" "about" }}
 <section class="{{ if eq .weight 0 }}banner{{else}}spotlight{{end}} style1 orient-{{ if modBool .weight 2}}left{{else}}right{{end}} content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
 	<div class="content">
 		<h1>{{ .title }}</h1>
