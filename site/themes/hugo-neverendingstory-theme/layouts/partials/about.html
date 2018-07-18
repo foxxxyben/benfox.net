@@ -1,7 +1,7 @@
 {{ range where .Data.Pages "Section" "about" }}
 <section class="{{ if eq .Weight 0 }}banner{{else}}spotlight{{end}} style1 orient-{{ if modBool .Weight 2}}left{{else}}right{{end}} content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
 	<div class="content">
-		<h1>{{ .title }}</h1>
+		<h1>{{ .Title }}</h1>
 		<p class="major">{{ .content | markdownify }}</p>
 	</div>
 	<div class="image">
