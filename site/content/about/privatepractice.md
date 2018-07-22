@@ -3,8 +3,8 @@ title: That same year I started my Private Practice in Brooklyn...
 date: 2017-01-04T15:04:10.000Z
 weight: 3
 image: about/playground.jpg
-[css]
-  [css.ethereal]
+css:
+  -ethereal:
     panel: spotlight medium left
     content: span-9
     image-class: filtered tinted

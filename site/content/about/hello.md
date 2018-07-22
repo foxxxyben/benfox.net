@@ -2,8 +2,8 @@
 title: Hello, my name is Ben Fox
 weight: 1
 image: about/benfox.jpg
-[css]
-  [css.ethereal]
+css:
+  -ethereal:
     panel: banner right
     content: color0 span-3-75
     image-class: filtered span-1-75

@@ -2,8 +2,8 @@
 title: And now I am offering my skills and services to the families and communities of the Pacific Northwest
 weight: 4
 image: about/tricities.jpg
-[css]
-  [css.ethereal]
+css:
+  -ethereal:
     panel: spotlight medium left
     content: span-7
     image-class: filtered tinted

@@ -2,8 +2,8 @@
 title: In 2005 I began my consulting career in New York...
 weight: 2
 image: about/nyc.jpg
-[css]
-  [css.ethereal]
+css:
+  -ethereal:
     panel: spotlight medium right
     content: span-7 align-right
     image-class: filtered tinted
