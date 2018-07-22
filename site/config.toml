@@ -72,8 +72,7 @@ paginate = 10
 	[params.contact]
 		hide  = false
 		title = "Get In Touch"
-		content = "If you want to learn more about my experience and the services I can offer, or have a need in the commuinity you would like me to collaborate or consult on, please fill out this brief contact form and I will quickly get in touch to meet with you and your organization.<br>
-		Thank you."
+		content = "If you want to learn more about my experience and the services I can offer, or have a need in the commuinity you would like me to collaborate or consult on, please fill out this brief contact form and I will quickly get in touch to meet with you and your organization. Thank you."
 
 		# This can be exact coordinates or a searchable address in google maps
 		gmaps_address = "4001 Kennedy Rd #7, Richland, WA 99352"
