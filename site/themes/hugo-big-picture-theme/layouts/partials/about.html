@@ -1,6 +1,6 @@
 {{ $about := where .Data.Pages "Section" "about" }}
 {{ $lenabout := len $about }}
-{{ range $about }}
+{{ range where .Data.Pages "Section" "about" }}
 <section id="about-{{ .Weight }}" class="main style{{ if eq .Weight 1}}1{{else}}2{{end}} dark fullscreen {{ if ne .Weight 1}}{{ if modBool .Weight 2}}left{{else}}right{{end}}{{end}}" style="background:url("{{ .Params.image }}")">
 	<div class="content">
 		<header>
