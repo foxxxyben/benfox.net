@@ -1,5 +1,5 @@
 {{ $home := where .Data.Pages "Section" "home" }}
-{{ $end := sub (len $about) 1 }}
+{{ $end := sub (len $home) 1 }}
 {{ range $i, $e := $home }}
 <article id="home{{ if ne $i 0 }}-{{$i}}{{end}}" class="panel {{ in eq $i 0}}intro{{end}}">
 	<header>
