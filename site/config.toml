@@ -24,7 +24,7 @@ paginate = 10
 	custom_css  = []
 
 	[params.portfolio]
-		hide  = false
+		hide  = true
 		title = "Recent Work"
 
 		# The images and thumbnails are stored under static/images
@@ -66,7 +66,7 @@ paginate = 10
 			description = "Lorem ipsum dolor sit amet."
 
 	[params.recentposts]
-		hide  = false
+		hide  = true
 		title = "Recent blog posts"
 
 	[params.contact]
