@@ -1,15 +1,15 @@
 {{ $about := where .Data.Pages "Section" "about" }}
-{{ $lenabout := len $about }}
-{{ range where .Data.Pages "Section" "about" }}
-<section id="about-{{ .Weight }}" class="main style{{ if eq .Weight 1}}1{{else}}2{{end}} dark fullscreen {{ if ne .Weight 1}}{{ if modBool .Weight 2}}left{{else}}right{{end}}{{end}}" style="background:url("{{ .Params.image }}")">
+{{ $end := sub (len $about) 1 }}
+{{ range $i, $e := $about }}
+<section id="about{{ if ne $i 0 }}-{{$i}}{{end}}" class="main style{{ cond (eq $i 0) "1" "2" }} dark fullscreen {{ if ne $i 0}}{{ cond (modBool .Weight 2) "left" "right" }}{{end}}" style="background:url("{{ $e.Params.image }}")">
 	<div class="content">
 		<header>
-			<h2>{{ .Title }}</h2>
+			<h2>{{ $e.Title }}</h2>
 		</header>
-		<p>{{ .Content | markdownify }}</p>
-		{{ if ne .Weight $lenabout}}
+		<p>{{ $e.Content | markdownify }}</p>
+		{{ if ne $i $end }}
 		<footer>
-			<a href="#about-{{ add .Weight 1 }}" class="button style2 down {{ if ne .Weight 1 }}anchored{{end}}">More</a>
+			<a href="#about-{{ add $i 1 }}" class="button style2 down {{ if ne $i 0 }}anchored{{end}}">More</a>
 		</footer>
 		{{end}}
 	</div>
