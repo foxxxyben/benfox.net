@@ -1,28 +1,18 @@
-<header id="nav-header">
-	<div class="left">
-		<h1><span>Story</span></h1>
-			<ul class="selector">
-				<li class="active">Desktop</li>
-				<li data-width="1040" data-height="768">Tablet</li>
-				<li data-width="788" data-height="1000">Tablet (Portrait)</li>
-				<li data-width="375" data-height="568">Mobile</li>
-			</ul>
-				<ul class="actions">
-					<li><a href="/uploads/demos/story/" class="button popout alt2 offsite icon icon-popout solo"><span class="label">Pop Out</span></a></li>
-				</ul>
-			</div>
+<nav id="nav">
+	{{ if not .Site.Params.about.hide }}
+		<a href="#" class="icon fa-home"><span>Home</span></a>
+	{{ end }}
 
-			<div class="right">
-				<ul class="share">
-					<li class="facebook">
-						<div class="fb-like" data-href="http://html5up.net/story" data-send="false" data-layout="button" data-width="100" data-show-faces="true"></div>
-					</li>
-					<li class="twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-url="https://html5up.net/story" data-text="Story: A free fully responsive HTML5/CSS3 site template" data-count="horizontal">Tweet</a>
-					</li>
-					<li class="google-plus"><div class="g-plusone" data-size="medium" data-annotation="none" data-href="https://html5up.net/story/"></div>
-					</li>
-				</ul>
-				<div class="actions"><a href="/" class="button back alt2">Back</a><a href="story/download" class="button alt download on" data-name="story" data-title="Story">Download <em>(64,055)</em></a>
-				</div>
-			</div>
-		</header>
+	{{ if not .Site.Params.portfolio.hide }}
+		<a href="#work" class="icon fa-folder"><span>Work</span></a>
+	{{ end }}
+
+	{{ if not .Site.Params.recentposts.hide }}
+
+	{{ end }}
+
+	{{ if not .Site.Params.contact.hide }}
+		<a href="#contact" class="icon fa-envelope"><span>Contact</span></a>
+	{{ end }}
+
+	</nav>

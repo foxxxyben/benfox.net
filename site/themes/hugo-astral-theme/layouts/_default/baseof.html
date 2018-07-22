@@ -1,5 +1,6 @@
 {{ partial "head" . }}
-	<body id="top">
+	<body class="is-preload" id="top">
+		<div id="wrapper">
 		{{ partial "header" . }}
 
 		{{ "<!-- Main -->" | safeHTML }}
@@ -8,5 +9,7 @@
 		</div>
 
 		{{ partial "footer" . }}
+	</div>
+		{{ partial "scripts" . }}
 	</body>
 </html>
