@@ -1,4 +1,4 @@
-{{ range first 1 where .Data.Pages "Section" "home" }}
+{{ range first 1 (where .Data.Pages "Section" "home") }}
 <article id="home" class="panel intro">
 	<header>
 		<h1>{{ .Title | safeHTML }}</h1>
