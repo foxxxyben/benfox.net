@@ -1,7 +1,7 @@
 ---
 title: "That same year I started my <br>Private Practice in Brooklyn..."
 weight: 2
-image: home/playground.jpg
+image: about/playground.jpg
 css:
   -ethereal:
     panel: spotlight medium left
