@@ -6,7 +6,7 @@
 		<h1>{{ .Title | safeHTML }}</h1>
 		<p>{{ .Content | markdownify }}</p>
 	</header>
-	<div class="image {{ .Params.css.ethereal.image-class }}" data-position="{{ .Params.css.ethereal.image-position }}">
+	<div class="image {{ .Params.css.ethereal.image.class }}" data-position="{{ .Params.css.ethereal.image.position }}">
 		{{ if ne $i $end }}
 		<a href="#home-{{ add $i 1 }}" class="jumplink pic">
 			<span class="arrow icon fa-chevron-right"><span>Next</span></span>
