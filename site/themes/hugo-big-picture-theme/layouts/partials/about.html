@@ -1,7 +1,7 @@
 {{ $about := where .Data.Pages "Section" "about" }}
 {{ $end := sub (len $about) 1 }}
 {{ range $i, $e := $about }}
-<section id="about{{ if ne $i 0 }}-{{$i}}{{end}}" class="main style{{ cond (eq $i 0) "1" "2" }} dark fullscreen {{ if ne $i 0}}{{ cond (modBool .Weight 2) "left" "right" }}{{end}}" style="background:url({{ $e.Params.image }})">
+<section id="about{{ if ne $i 0 }}-{{$i}}{{end}}" class="main style{{ cond (eq $i 0) "1" "2" }} dark fullscreen {{ if ne $i 0}}{{ cond (modBool .Weight 2) "left" "right" }}{{end}}" style="background:url({{ $e.Params.image }}); background-repeat:no-repeat; background-size:cover;">
 	<div class="content">
 		<header>
 			<h2>{{ $e.Title }}</h2>
