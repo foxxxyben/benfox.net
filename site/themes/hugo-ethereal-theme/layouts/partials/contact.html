@@ -1,64 +1,38 @@
-<!-- Three -->
-<section>
-	{{ if isset .Site.Params.contact "email" }}
-		{{ with .Site.Params.contact.title }}<h2>{{ . }}</h2>{{ end }}
-		{{ with .Site.Params.contact.content }}<p>{{ . | markdownify }}</p>{{ end }}
-	{{ end }}
-	<div class="row" id="contact-form">
-		{{ if (isset .Site.Params.contact "email") | and (gt (len .Site.Params.contact.email) 0) }}
-		<div class="8u 12u$(small)">
-			<form action="//formspree.io/{{ .Site.Params.contact.email }}" method="POST">
-				<div class="row uniform 50%">
-					<input type="hidden" name="_subject" value="New email from your portfolio" />
-					<div class="6u 12u$(xsmall)"><input type="text" name="name" id="name" placeholder="{{ .Site.Params.contact.form.name }}" required/></div>
-					<div class="6u$ 12u$(xsmall)"><input type="email" name="_replyto" name="email" id="email" placeholder="{{ .Site.Params.contact.form.email }}" required/></div>
-					<div class="12u$"><textarea name="message" id="message" placeholder="{{ .Site.Params.contact.form.message }}" rows="4" required></textarea></div>
-					<input type="text" name="_gotcha" style="display:none" />
-
-					<ul class="actions">
-						<li><input type="submit" value="{{ .Site.Params.contact.form.submit }}" /></li>
-					</ul>
+<article class="panel color4-alt">
+	<div class="intro color4">
+		<h2 class="major">Contact</h2>
+		<p>If you want to learn more about my experience and the services I can offer, or have a need in the commuinity you would like me to collaborate or consult on, please fill out this brief contact form and I will quickly get in touch to meet with you and your organization.<br>
+		Thank you.</p>
+	</div>
+	<div class="inner columns divided">
+		<div class="span-3-25">
+			<form method="post" action="mailto:info@benfox.net">
+				<div class="fields">
+					<div class="field half">
+						<label for="name">Name</label>
+						<input type="text" name="name" id="name" />
+					</div>
+					<div class="field half">
+						<label for="email">Email</label>
+						<input type="email" name="email" id="email" />
+					</div>
+					<div class="field half">
+						<label for="name">Telephone</label>
+						<input type="text" name="phone" id="phone" />
+					</div>
+					<div class="field half">
+						<label for="email">Best time to call</label>
+						<input type="text" name="time" id="time" />
+					</div>
+					<div class="field">
+						<label for="message">Message</label>
+						<textarea name="message" id="message" rows="4"></textarea>
+					</div>
 				</div>
+				<ul class="actions">
+					<li><input type="submit" value="Send Message" class="button primary" /></li>
+				</ul>
 			</form>
 		</div>
-		{{ else }}
-		<div class="8u 12u$(small)">&nbsp;</div>
-		{{ end }}
-		<div class="4u$ 12u$(small)">
-			<ul class="labeled-icons">
-				{{ if isset .Site.Params.contact "address" }}
-				<li>
-					<h3 class="icon fa-home"><span class="label"></span></h3>
-					{{ if isset .Site.Params.contact "gmaps_address" }}
-					<a href="https://maps.google.com/?q={{ .Site.Params.contact.gmaps_address}}">
-					{{ end }}
-					{{ range .Site.Params.contact.address }}
-						{{ . }}<br />
-					{{ end }}
-					{{ if isset .Site.Params.contact "gmaps_address" }}
-					</a>
-					{{ end }}
-				</li>
-				{{ end }}
-				{{ if isset .Site.Params.contact "phone" }}
-				<li>
-					<h3 class="icon fa-mobile"><span class="label"></span></h3>
-					<a href="tel:{{ .Site.Params.contact.phone | replaceRE "[\\s-]" "$1" }}">{{ .Site.Params.contact.phone }}</a>
-				</li>
-				{{ end }}
-				{{ if isset .Site.Params.contact "jabber" }}
-				<li>
-					<h3 class="icon fa fa-mobile"><span class="label"></span></h3>
-					<a href="#">{{ .Site.Params.contact.jabber }}</a>
-				</li>
-				{{ end }}
-				{{ if isset .Site.Params.contact "email" }}
-				<li>
-					<h3 class="icon fa-envelope-o"><span class="label"></span></h3>
-					<a href="mailto:{{ .Site.Params.contact.email }}">{{ .Site.Params.contact.email }}</a>
-				</li>
-				{{ end }}
-			</ul>
-		</div>
 	</div>
-</section>
+</article>

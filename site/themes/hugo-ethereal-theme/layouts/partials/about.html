@@ -1,11 +1,19 @@
-{{ range where .Data.Pages "Section" "about" }}
-<section class="{{ if eq .Weight 0 }}banner{{else}}spotlight{{end}} style1 orient-{{ if modBool .Weight 2}}left{{else}}right{{end}} content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
-	<div class="content">
-		<h1>{{ .Title }}</h1>
-		<p class="major">{{ .Content | markdownify }}</p>
-	</div>
-	<div class="image">
-		<img src="{{ .Params.image }}" alt="" />
+<article id="home" class="panel-wrapper">
+
+{{ $about := where .Data.Pages "Section" "about" }}
+{{ $end := sub (len $about) 1 }}
+{{ range $i, $e := $about }}
+<section class="panel {{$e.Params.css.ethereal.panel}}" id="home{{ if ne $i 0 }}-{{$i}}{{end}}">
+	<div class="content {{$e.Params.css.ethereal.content}}">
+			<h1>{{ $e.Title }}</h1>
+		<p>{{ $e.Content | markdownify }}</p>
+		{{ if ne $i $end }}
+		<ul class="actions">
+			<li><a href="#home-{{ add $i 1 }}" class="button primary color1 circle icon fa-angle-right">Next</a></li>
+		</ul>
+		{{end}}
 	</div>
 </section>
 {{ end }}
+
+</article>
