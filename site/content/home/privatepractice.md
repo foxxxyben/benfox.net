@@ -1,8 +1,7 @@
 ---
-title: That same year I started my Private Practice in Brooklyn...
-date: 2017-01-04T15:04:10.000Z
+title: "That same year I started my <br>Private Practice in Brooklyn..."
 weight: 3
-image: about/playground.jpg
+image: home/playground.jpg
 css:
   -ethereal:
     panel: spotlight medium left

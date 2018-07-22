@@ -1,6 +1,6 @@
 {{ define "main" }}
-	{{ if not .Site.Params.about.hide }}
-		{{ partial "about" . }}
+	{{ if not .Site.Params.home.hide }}
+		{{ partial "home" . }}
 	{{ end }}
 
 	{{ if not .Site.Params.portfolio.hide }}

@@ -1,7 +1,7 @@
 ---
 title: Hello, my name is Ben Fox
 weight: 1
-image: about/benfox.jpg
+image: home/benfox.jpg
 css:
   -ethereal:
     panel: banner right
