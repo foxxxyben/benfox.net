@@ -1,7 +1,7 @@
 {{ $about := where .Data.Pages "Section" "about" }}
 {{ $end := sub (len $about) 1 }}
 {{ range $i, $e := $about }}
-<section id="about{{ if ne $i 0 }}-{{$i}}{{end}}" class="main style{{ cond (eq $i 0) "1" "2" }} dark fullscreen {{ if ne $i 0}}{{ cond (modBool $i 2) "right" "left" }}{{end}}" style="background:url({{ $e.Params.image }}); background-repeat:no-repeat; background-size:{{ cond (eq $i 0) "contain" "cover" }};">
+<section id="about{{ if ne $i 0 }}-{{$i}}{{end}}" class="main style{{ cond (eq $i 0) "1" "2" }} dark fullscreen {{ if ne $i 0}}{{ cond (modBool $i 2) "left" "right" }}{{end}}" style="background:url({{ $e.Params.image }}); background-repeat:no-repeat; background-size:{{ cond (eq $i 0) "cover" "cover" }};">
 	<div class="content">
 		<header>
 			<h2>{{ $e.Title }}</h2>
@@ -9,7 +9,7 @@
 		<p>{{ $e.Content | markdownify }}</p>
 		{{ if ne $i $end }}
 		<footer>
-			<a href="#about-{{ add $i 1 }}" class="button style2 down {{ if ne $i 0 }}anchored{{end}}">More</a>
+			<a href="#about-{{ add $i 1 }}" class="button style2 down">More</a>
 		</footer>
 		{{end}}
 	</div>
