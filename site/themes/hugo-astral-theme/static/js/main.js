@@ -61,7 +61,9 @@
 					if (window.location.hash) {
 
 				 		$panel = $panels.filter(window.location.hash);
-						$link = $nav_links.filter('[href="' + window.location.hash + '"]');
+						$link = $nav_links.find(function(link) {
+							return link.includes(window.location.hash)
+						});
 
 					}
 
@@ -97,7 +99,9 @@
 					if (window.location.hash) {
 
 				 		$panel = $panels.filter(window.location.hash);
-						$link = $nav_links.filter('[href="' + window.location.hash + '"]');
+						$link = $nav_links.find(function(link) {
+							return link.includes(window.location.hash)
+						});
 
 						// No target panel? Bail.
 							if ($panel.length == 0)
