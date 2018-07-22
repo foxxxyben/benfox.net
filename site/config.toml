@@ -1,7 +1,7 @@
 baseurl = "/"
 languageCode = "en-us"
 title = "benfox.net"
-theme = "hugo-big-picture-theme"
+theme = "hugo-ethereal-theme"
 disqusShortname = "spf13"
 # Enable Google Analytics by inserting your tracking code
 googleAnalytics = ""
