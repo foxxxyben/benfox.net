@@ -3,13 +3,13 @@
 {{ range $i, $e := $home }}
 <article id="home{{ if ne $i 0 }}-{{$i}}{{end}}" class="panel {{ in eq $i 0}}intro{{end}}">
 	<header>
-		<h1>{{ $e.Title }}</h1>
-		<p>{{ $e.Content | markdownify }}</p>
+		<h1>{{ .Title }}</h1>
+		<p>{{ .Content | markdownify }}</p>
 	</header>
 	{{ if ne $i $end }}
 	<a href="#home-{{ add $i 1 }}" class="jumplink pic">
 		<span class="arrow icon fa-chevron-right"><span>Next</span></span>
 	</a>{{end}}
-	<img src="$e.Params.image" alt="" />
+	<img src=".Params.image" alt="" />
 </article>
 {{end}}
