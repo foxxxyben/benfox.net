@@ -1,7 +1,7 @@
 {{ $home := where .Data.Pages "Section" "home" }}
 {{ $end := sub (len $home) 1 }}
 {{ range $i, $e := $home }}
-<article id="home{{ if ne $i 0 }}-{{$i}}{{end}}" class="panel {{ if in eq $i 0}}intro{{end}}">
+<article id="home{{ if ne $i 0 }}-{{$i}}{{end}}" class="panel {{ if eq $i 0}}intro{{end}}">
 	<header>
 		<h1>{{ .Title }}</h1>
 		<p>{{ .Content | markdownify }}</p>
