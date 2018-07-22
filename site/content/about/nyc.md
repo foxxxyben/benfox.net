@@ -1,6 +1,6 @@
 ---
 title: "In 2005 I began my <br>consulting career in New York..."
-weight: 2
+weight: 1
 image: home/nyc.jpg
 css:
   -ethereal:
