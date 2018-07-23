@@ -8,12 +8,12 @@
 	</header>
 	{{ if ne $i $end }}
 		<a href="#about-{{ add $i 1}}">
-			<span class="arrow.right icon fa-chevron-right"><span>Next</span></span>
+			<span class="arrow next icon fa-chevron-right"><span>Next</span></span>
 		</a>
 	{{end}}
 	{{ if ne $i 0 }}
 		<a href="#about{{ if ne $i 1}}-{{ sub $i 1 }}{{end}}">
-			<span class="arrow.left icon fa-chevron-left"><span>Prev</span></span>
+			<span class="arrow prev icon fa-chevron-left"><span>Prev</span></span>
 		</a>
 	{{end}}
 </article>
