@@ -1,41 +1,39 @@
 {{ "<!-- Footer -->" | safeHTML }}
 <footer id="footer">
-	<ul class="icons">
+	<div>
 		{{ with .Site.Params.sidebar.googleplus }}
-		<li><a href="//plus.google.com/+{{ . }}" target="_blank" class="icon fa-google-plus"><span class="label">Google Plus</span></a></li>
+		<a href="//plus.google.com/+{{ . }}" target="_blank" class="icon fa-google-plus"><span class="label">Google Plus</span></a>
 		{{ end }}
 		{{ with .Site.Params.sidebar.facebook }}
-        <li><a href="//facebook.com/{{ . }}" target="_blank" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+        <a href="//facebook.com/{{ . }}" target="_blank" class="icon fa-facebook"><span class="label">Facebook</span></a>
         {{ end }}
 		{{ with .Site.Params.sidebar.twitter }}
-		<li><a href="//twitter.com/{{ . }}" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		<a href="//twitter.com/{{ . }}" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a>
 		{{ end }}
 		{{ with .Site.Params.sidebar.github }}
-		<li><a href="//github.com/{{ . }}" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		<a href="//github.com/{{ . }}" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a>
 		{{ end }}
 		{{ with .Site.Params.sidebar.gitlab }}
-		<li><a href="//gitlab.com/{{ . }}" target="_blank" class="icon fa-gitlab"><span class="label">GitLab</span></a></li>
+		<a href="//gitlab.com/{{ . }}" target="_blank" class="icon fa-gitlab"><span class="label">GitLab</span></a>
 		{{ end }}
 		{{ with .Site.Params.sidebar.linkedin }}
-		<li><a href="//linkedin.com/in/{{ . }}" target="_blank" class="icon fa-linkedin-square"><span class="label">Linkedin</span></a></li>
+		<a href="//linkedin.com/in/{{ . }}" target="_blank" class="icon fa-linkedin-square"><span class="label">Linkedin</span></a>
 		{{ end }}
 		{{ with .Site.Params.sidebar.dribbble }}
-		<li><a href="//dribbble.com/{{ . }}" target="_blank" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+		<a href="//dribbble.com/{{ . }}" target="_blank" class="icon fa-dribbble"><span class="label">Dribbble</span></a>
 		{{ end }}
 		{{ with .Site.Params.sidebar.flickr }}
-		<li><a href="//flickr.com/photos/{{ . }}" target="_blank" class="icon fa-flickr"><span class="label">Flickr</span></a></li>
+		<a href="//flickr.com/photos/{{ . }}" target="_blank" class="icon fa-flickr"><span class="label">Flickr</span></a>
 		{{ end }}
 		{{ with .Site.Params.contact.email }}
-		<li><a href="{{ $.Site.BaseURL }}#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		<a href="{{ $.Site.BaseURL }}#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a>
 		{{ end }}
 		{{ if not .Site.Params.rss.hide }}
-		<li><a href="{{ if $.RSSLink }}{{ $.RSSLink }}{{ else }}{{ $.Site.RSSLink }}{{ end }}" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		<a href="{{ if $.RSSLink }}{{ $.RSSLink }}{{ else }}{{ $.Site.RSSLink }}{{ end }}" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a>
 		{{ end }}
-	</ul>
+	</div>
 
-	<ul class="copyright">
-		{{ range .Site.Params.sidebar.copyright }}
-		<li>{{ . | markdownify }}</li>
-		{{ end }}
-	</ul>
+	<div>
+		<p>&copy; Ben Fox. Design: <a href="http://html5up.net">HTML5 UP</p>
+	</div>
 </footer>
