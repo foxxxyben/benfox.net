@@ -1326,7 +1326,7 @@ input, select, textarea {
 
 	body, input, textarea, select {
 		font-family: 'Source Sans Pro', sans-serif;
-		font-weight: 300;
+		font-weight: 400;
 		color: #777777;
 		font-size: 20pt;
 		line-height: 1.75em;
@@ -1367,6 +1367,7 @@ input, select, textarea {
 	strong, b, h1, h2, h3, h4, h5, h6 {
 		font-weight: 400;
 		color: #363636;
+		line-height: 1.0em;
 	}
 
 	h1 {
@@ -1528,6 +1529,8 @@ input, select, textarea {
 		}
 
 	header {
+		padding: 0.5em;
+		background-color: rgba(245, 245, 245, 0.5)
 		margin: 0 0 1.5em 0;
 	}
 
