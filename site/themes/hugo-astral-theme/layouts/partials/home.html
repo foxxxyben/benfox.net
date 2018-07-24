@@ -1,12 +1,5 @@
-{{ range first 1 (where .Data.Pages "Section" "home") }}
-<article id="home" class="panel intro">
-	<header>
-		<h1>{{ .Title | safeHTML }}</h1>
-		<p>{{ .Content | markdownify }}</p>
-	</header>
-	<a href="#{{ index $cats (add $pos 1) }}" class="jumplink pic">
-		<span class="arrow icon fa-chevron-right"><span>About me</span></span>
-		<img src="{{ .Params.image }}" alt="" />
-	</a>
-</article>
-{{end}}
+<header class="panel intro">
+	<h1>{{ .Title | safeHTML }}</h1>
+	<p>{{ .Content | markdownify }}</p>
+	<img src="{{ .Params.image }}" alt="" />
+</header>
