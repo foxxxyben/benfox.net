@@ -1,3 +1,4 @@
+{{ $cats := where .Site.Params.pages "hide" "false" }}
 {{ $pages := where .Data.Pages "Section" $cat }}
 {{ $end := sub (len $pages) 1 }}
 {{ range $i, $e := $pages }}
