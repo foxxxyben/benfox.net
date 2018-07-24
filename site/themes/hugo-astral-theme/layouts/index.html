@@ -1,21 +1,6 @@
 {{ define "main" }}
-	{{ if not .Site.Params.home.hide }}
-		{{ partial "home" . }}
-	{{ end }}
 
-	{{ if not .Site.Params.about.hide }}
-		{{ partial "education" . }}
-	{{ end }}
-
-	{{ if not .Site.Params.portfolio.hide }}
-		{{ partial "portfolio" . }}
-	{{ end }}
-
-	{{ if not .Site.Params.recentposts.hide }}
-		{{ partial "recent-posts" . }}
-	{{ end }}
-
-	{{ if not .Site.Params.contact.hide }}
-		{{ partial "contact" . }}
-	{{ end }}
+{{ $cats := where .Site.Params.pages "hide" "false" }}
+{{ range $pos, $cat := $cats }}
+	{{ partial $cat . }}
 {{ end }}

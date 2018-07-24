@@ -23,12 +23,29 @@ paginate = 10
 	custom_js   = []
 	custom_css  = []
 
-	[params.recentposts]
+	[params.pages.home]
+		hide = false
+		template = "home"
+
+	[params.pages.education]
+		hide = false
+		template = "consulting"
+
+	[params.pages.agriculture]
+		hide = false
+		template = "consulting"
+
+	[params.pages.technology]
+		hide = false
+		template = "consulting"
+
+	[params.pages.recentposts]
 		hide  = true
 		title = "Recent blog posts"
 
-	[params.contact]
+	[params.pages.contact]
 		hide  = false
+		template = "contact"
 		title = "Get In Touch"
 		content = "If you want to learn more about my experience and the services I can offer, or have a need in the commuinity you would like me to collaborate or consult on, please fill out this brief contact form and I will quickly get in touch to meet with you and your organization. Thank you."
 

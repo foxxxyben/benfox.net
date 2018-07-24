@@ -1,0 +1,30 @@
+{{ $pages := where .Data.Pages "Section" $cat }}
+{{ $end := sub (len $pages) 1 }}
+{{ range $i, $e := $pages }}
+	<article id="$cat{{ if ne $i 0 }}-{{$i}}{{end}}" class="panel" style="background-image:url({{ .Params.image }}); background-size:cover;">
+		<header>
+			<h1>{{ .Title | safeHTML }}</h1>
+			<p>{{ .Content | markdownify }}</p>
+		</header>
+		{{ if eq $i $end }}
+			{{ $next := (index $cats (add $pos 1)) }}
+		{{else}}
+			{{ $next := printf "%s-%d" $cat (add $i 1)}}
+		{{end}}
+			<a href="#{{$next}}">
+				<span class="arrow next icon fa-chevron-right"><span>Next</span></span>
+			</a>
+		{{ if eq $i 0 }}
+			{{ $prevCat := index $cats (sub $pos 1) }}
+			{{ $prevPages := where .Data.Pages "Section" $prevCat }}
+			{{ $prev := printf "%s-%d" $prevCat (sub (len $prevPages) 1) }}
+		{{else}}
+			{{ $prev := printf "%s-%d" $cat (sub $i 1)}}
+		{{end}}
+			<a href="#{{$prev}}">
+				<span class="arrow prev icon fa-chevron-left"><span>Prev</span></span>
+			</a>
+	</article>
+	{{end}}
+
+{{ end }}

@@ -1,0 +1,20 @@
+{{ $about := where .Data.Pages "Section" "education" }}
+{{ $end := sub (len $about) 1 }}
+{{ range $i, $e := $about }}
+<article id="education{{ if ne $i 0 }}-{{$i}}{{end}}" class="panel" style="background-image:url({{ .Params.image }}); background-size:cover;">
+	<header>
+		<h1>{{ .Title | safeHTML }}</h1>
+		<p>{{ .Content | markdownify }}</p>
+	</header>
+	{{ if ne $i $end }}
+		<a href="#education-{{ add $i 1}}">
+			<span class="arrow next icon fa-chevron-right"><span>Next</span></span>
+		</a>
+	{{end}}
+	{{ if ne $i 0 }}
+		<a href="#education{{ if ne $i 1}}-{{ sub $i 1 }}{{end}}">
+			<span class="arrow prev icon fa-chevron-left"><span>Prev</span></span>
+		</a>
+	{{end}}
+</article>
+{{end}}
