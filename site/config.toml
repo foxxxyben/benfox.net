@@ -7,23 +7,21 @@ googleAnalytics = ""
 # Define how many posts should appear on a site
 paginate = 10
 
-# To provide some metadata for search engines feel free to add a few
-	# information about you and your website.
-name = "Your name"
-description = "Describe your website"
-
-# Format dates with Go's time formatting
-date_format = "2006-01-02"
-
-# Add read time estimates in the format "X min read"
-show_read_time = false
-
-# Add custom assets with their paths relative to the static folder
-custom_js   = []
-custom_css  = []
-
-
 [params]
+	# To provide some metadata for search engines feel free to add a few
+	# information about you and your website.
+	name = "Your name"
+	description = "Describe your website"
+
+	# Format dates with Go's time formatting
+	date_format = "2006-01-02"
+
+	# Add read time estimates in the format "X min read"
+	show_read_time = false
+
+	# Add custom assets with their paths relative to the static folder
+	custom_js   = []
+	custom_css  = []
 
 [params.nav]
 	hide  = false
