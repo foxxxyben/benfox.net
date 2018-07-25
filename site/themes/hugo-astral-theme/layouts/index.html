@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-	{{ range $pos, $cat := .Site.Params.pages }}
+	{{ range $pos, $cat := .Site.Params.sections }}
 		{{ if not .hide }}
 			{{ printf "Category:%s; Position:%d" $cat $pos}}
 			{{ $pages := where .Data.Pages "Section" $cat }}
@@ -10,7 +10,7 @@
 					{{ partial $cat $page }}
 				</article>
 
-				{{ if and (ne $i $end) (ne $pos (len .Site.Params.pages)) }}
+				{{ if and (ne $i $end) (ne $pos (len .Site.Params.sections)) }}
 					{{ $next := printf "%s-%d" $cat (add $i 1)}}
 					{{ if eq $i $end }}
 						{{ $next := (index .Site.Params.pages (add $pos 1)) }}
@@ -23,7 +23,7 @@
 				{{ if and (ne $i 0) (ne $pos 0) }}
 					{{ $prev := printf "%s-%d" $cat (sub $i 1)}}
 					{{ if eq $i 0 }}
-						{{ $prevCat := index .Site.Params.pages (sub $pos 1) }}
+						{{ $prevCat := index .Site.Params.sections (sub $pos 1) }}
 						{{ $prevPages := where .Data.Pages "Section" $prevCat }}
 						{{ $prev := printf "%s-%d" $prevCat (sub (len $prevPages) 1) }}
 					{{end}}

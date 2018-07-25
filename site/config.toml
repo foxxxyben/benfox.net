@@ -23,29 +23,33 @@ paginate = 10
 	custom_js   = []
 	custom_css  = []
 
-[params.pages]
-
-	[params.pages.home]
+		[[sections]]
+		name = home
 		hide = false
 		template = "home"
 
-	[params.pages.education]
+		[[sections]]
+		name = education
 		hide = false
 		template = "consulting"
 
-	[params.pages.agriculture]
+		[[sections]]
+		name = agriculture
 		hide = false
 		template = "consulting"
 
-	[params.pages.technology]
+		[[sections]]
+		name = technology
 		hide = false
 		template = "consulting"
 
-	[params.pages.recentposts]
+		[[sections]]
+		name = recentposts
 		hide  = true
 		title = "Recent blog posts"
 
-	[params.pages.contact]
+		[[sections]]
+		name = contact
 		hide  = false
 		template = "contact"
 		title = "Get In Touch"
