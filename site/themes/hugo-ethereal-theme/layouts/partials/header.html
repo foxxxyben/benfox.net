@@ -1,5 +1,6 @@
 <nav id="nav">
-  <a href="#" class="icon fa-home"><span>Home</span></a>
-  <a href="#work" class="icon fa-folder"><span>Work</span></a>
-  <a href="#contact" class="icon fa-envelope"><span>Contact</span></a>
+  {{ range .Site.Menu.main }}
+    {{ if not .hide }}
+      <a href="#{{.name}}" class="icon {{.icon}}"><span>{{.name}}</span></a>
+  {{end}}
 </nav>
