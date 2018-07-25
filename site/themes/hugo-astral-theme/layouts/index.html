@@ -5,7 +5,7 @@
 		{{ $pages := where .Data.Pages "Section" $cat }}
 		{{ $end := sub (len $pages) 1 }}
 		{{ range $i, $e := $pages }}
-			<article id="$cat{{ if ne $i 0 }}-{{$i}}{{end}}">
+			<article id="$cat{{ if ne $i 0 }}-{{$i}}{{end}}" class="panel">
 				{{ partial $cat . }}
 			</article>
 
@@ -30,7 +30,7 @@
 					<span class="arrow prev icon fa-chevron-left"><span>Prev</span></span>
 				</a>
 			{{end}}
-			
+
 		{{  end }}
 	{{  end }}
 {{ end }}
