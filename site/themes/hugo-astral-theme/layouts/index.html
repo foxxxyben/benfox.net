@@ -9,29 +9,27 @@
 			{{ partial $cat . }}
 		</article>
 
-		{{ if eq $i $end }}
-			{{ $next := (index $cats (add $pos 1)) }}
-		{{else}}
-			{{ $next := printf "%s-%d" $cat (add $i 1)}}
-		{{end}}
 		{{ if and (ne $i $end) (ne $pos (len $cats)) }}
-		<a href="#{{$next}}">
-			<span class="arrow next icon fa-chevron-right"><span>Next</span></span>
-		</a>
+			{{ $next := printf "%s-%d" $cat (add $i 1)}}
+			{{ if eq $i $end }}
+				{{ $next := (index $cats (add $pos 1)) }}
+			{{end}}
+			<a href="#{{$next}}">
+				<span class="arrow next icon fa-chevron-right"><span>Next</span></span>
+			</a>
 		{{end}}
 
-		{{ if eq $i 0 }}
-			{{ $prevCat := index $cats (sub $pos 1) }}
-			{{ $prevPages := where .Data.Pages "Section" $prevCat }}
-			{{ $prev := printf "%s-%d" $prevCat (sub (len $prevPages) 1) }}
-		{{else}}
-			{{ $prev := printf "%s-%d" $cat (sub $i 1)}}
-		{{end}}
 		{{ if and (ne $i 0) (ne $pos 0) }}
-		<a href="#{{$prev}}">
-			<span class="arrow prev icon fa-chevron-left"><span>Prev</span></span>
-		</a>
+			{{ $prev := printf "%s-%d" $cat (sub $i 1)}}
+			{{ if eq $i 0 }}
+				{{ $prevCat := index $cats (sub $pos 1) }}
+				{{ $prevPages := where .Data.Pages "Section" $prevCat }}
+				{{ $prev := printf "%s-%d" $prevCat (sub (len $prevPages) 1) }}
+			{{end}}
+			<a href="#{{$prev}}">
+				<span class="arrow prev icon fa-chevron-left"><span>Prev</span></span>
+			</a>
 		{{end}}
-			
+
 	{{  end }}
 {{ end }}
