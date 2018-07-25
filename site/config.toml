@@ -23,6 +23,8 @@ paginate = 10
 	custom_js   = []
 	custom_css  = []
 
+[params.pages]
+
 	[params.pages.home]
 		hide = false
 		template = "home"
