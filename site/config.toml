@@ -24,32 +24,32 @@ paginate = 10
 	custom_css  = []
 
 		[[sections]]
-		name = home
+		name = "home"
 		hide = false
 		template = "home"
 
 		[[sections]]
-		name = education
+		name = "education"
 		hide = false
 		template = "consulting"
 
 		[[sections]]
-		name = agriculture
+		name = "agriculture"
 		hide = false
 		template = "consulting"
 
 		[[sections]]
-		name = technology
+		name = "technology"
 		hide = false
 		template = "consulting"
 
 		[[sections]]
-		name = recentposts
+		name = "recentposts"
 		hide  = true
 		title = "Recent blog posts"
 
 		[[sections]]
-		name = contact
+		name = "contact"
 		hide  = false
 		template = "contact"
 		title = "Get In Touch"
