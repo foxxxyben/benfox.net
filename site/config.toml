@@ -7,45 +7,43 @@ googleAnalytics = ""
 # Define how many posts should appear on a site
 paginate = 10
 
-[menu]
-
-	[[menu.main]]
+	[menu.main.home]
 	name = "Home"
 	icon = "fa-home"
 	hide = false
 	template = "home"
 
-	[[menu.main]]
+	[menu.main.education]
 	name = "Education"
 	icon = "fa-user-graduate"
 	hide = false
 	template = "consulting"
 
-	[[menu.main]]
+	[menu.main.agriculture]
 	name = "Agriculture"
 	icon = "fa-leaf"
 	hide = false
 	template = "consulting"
 
-	[[menu.main]]
+	[menu.main.technology]
 	name = "Technology"
 	icon = "fa-code-branch"
 	hide = false
 	template = "consulting"
 
-	[[menu.main]]
+	[menu.main.news]
 	name = "News"
 	icon = "fa-comment-dots"
 	hide  = true
 	title = "Latest News"
 
-	[[menu.main]]
+	[menu.main.contact]
 	name = "Contact"
 	icon = "fa-envelope"
 	hide  = false
 	template = "contact"
 	title = "Get In Touch"
-	content = "If you want to learn more about my experience and the services I can offer, or have a need in the commuinity you would like me to collaborate or consult on, please fill out this brief contact form and I will quickly get in touch to meet with you and your organization. Thank you."
+	content = "If you want to learn more about my experience and the services I can offer, or have a need in the community you would like me to collaborate or consult on, please fill out this brief contact form and I will quickly get in touch to meet with you and your organization. Thank you."
 
 [params]
 	# To provide some metadata for search engines feel free to add a few
