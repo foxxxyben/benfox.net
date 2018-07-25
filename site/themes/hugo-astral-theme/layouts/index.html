@@ -1,37 +1,38 @@
 {{ define "main" }}
 
-	{{ $cats := where .Site.Params.pages "hide" "false" }}
-	{{ range $pos, $cat := $cats }}
-		{{ printf "Category:%s; Position:%d" $cat $pos}}
-		{{ $pages := where .Data.Pages "Section" $cat }}
-		{{ $end := sub (len $pages) 1 }}
-		{{ range $i, $page := $pages }}
-			<article id="$cat{{ if ne $i 0 }}-{{$i}}{{end}}" class="panel">
-				{{ partial $cat $page }}
-			</article>
+	{{ range $pos, $cat := .Site.Params.pages }}
+		{{ if not .hide }}
+			{{ printf "Category:%s; Position:%d" $cat $pos}}
+			{{ $pages := where .Data.Pages "Section" $cat }}
+			{{ $end := sub (len $pages) 1 }}
+			{{ range $i, $page := $pages }}
+				<article id="$cat{{ if ne $i 0 }}-{{$i}}{{end}}" class="panel">
+					{{ partial $cat $page }}
+				</article>
 
-			{{ if and (ne $i $end) (ne $pos (len $cats)) }}
-				{{ $next := printf "%s-%d" $cat (add $i 1)}}
-				{{ if eq $i $end }}
-					{{ $next := (index $cats (add $pos 1)) }}
+				{{ if and (ne $i $end) (ne $pos (len .Site.Params.pages)) }}
+					{{ $next := printf "%s-%d" $cat (add $i 1)}}
+					{{ if eq $i $end }}
+						{{ $next := (index .Site.Params.pages (add $pos 1)) }}
+					{{end}}
+					<a href="#{{$next}}">
+						<span class="arrow next icon fa-chevron-right"><span>Next</span></span>
+					</a>
 				{{end}}
-				<a href="#{{$next}}">
-					<span class="arrow next icon fa-chevron-right"><span>Next</span></span>
-				</a>
-			{{end}}
 
-			{{ if and (ne $i 0) (ne $pos 0) }}
-				{{ $prev := printf "%s-%d" $cat (sub $i 1)}}
-				{{ if eq $i 0 }}
-					{{ $prevCat := index $cats (sub $pos 1) }}
-					{{ $prevPages := where .Data.Pages "Section" $prevCat }}
-					{{ $prev := printf "%s-%d" $prevCat (sub (len $prevPages) 1) }}
+				{{ if and (ne $i 0) (ne $pos 0) }}
+					{{ $prev := printf "%s-%d" $cat (sub $i 1)}}
+					{{ if eq $i 0 }}
+						{{ $prevCat := index .Site.Params.pages (sub $pos 1) }}
+						{{ $prevPages := where .Data.Pages "Section" $prevCat }}
+						{{ $prev := printf "%s-%d" $prevCat (sub (len $prevPages) 1) }}
+					{{end}}
+					<a href="#{{$prev}}">
+						<span class="arrow prev icon fa-chevron-left"><span>Prev</span></span>
+					</a>
 				{{end}}
-				<a href="#{{$prev}}">
-					<span class="arrow prev icon fa-chevron-left"><span>Prev</span></span>
-				</a>
-			{{end}}
 
+			{{  end }}
 		{{  end }}
 	{{  end }}
 {{ end }}
