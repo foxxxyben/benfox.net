@@ -7,37 +7,46 @@ googleAnalytics = ""
 # Define how many posts should appear on a site
 paginate = 10
 
-	[params.nav.main.home]
+[params]
+
+[params.nav]
+	hide  = false
+
+	[[params.nav.main]]
 	name = "Home"
 	icon = "fa-home"
 	hide = false
+	section = "home"
 	template = "home"
 
-	[params.nav.main.education]
+	[[params.nav.main]]
 	name = "Education"
 	icon = "fa-user-graduate"
 	hide = false
+	section = "education"
 	template = "consulting"
 
-	[params.nav.main.agriculture]
+	[[params.nav.main]]
 	name = "Agriculture"
 	icon = "fa-leaf"
 	hide = false
+	section = "agriculture"
 	template = "consulting"
 
-	[params.nav.main.technology]
+	[[params.nav.main]]
 	name = "Technology"
 	icon = "fa-code-branch"
 	hide = false
+	section = "technology"
 	template = "consulting"
 
-	[params.nav.main.news]
+	[[params.nav.main]]
 	name = "News"
 	icon = "fa-comment-dots"
 	hide  = true
 	title = "Latest News"
 
-	[params.nav.main.contact]
+	[[params.nav.main]]
 	name = "Contact"
 	icon = "fa-envelope"
 	hide  = false
@@ -45,7 +54,7 @@ paginate = 10
 	title = "Get In Touch"
 	content = "If you want to learn more about my experience and the services I can offer, or have a need in the community you would like me to collaborate or consult on, please fill out this brief contact form and I will quickly get in touch to meet with you and your organization. Thank you."
 
-[params]
+
 	# To provide some metadata for search engines feel free to add a few
     # information about you and your website.
 	name = "Your name"
