@@ -2,6 +2,7 @@
 
 	{{ $cats := where .Site.Params.pages "hide" "false" }}
 	{{ range $pos, $cat := $cats }}
+		{{ printf "Category:%s; Position:%d" $cat $pos}}
 		{{ $pages := where .Data.Pages "Section" $cat }}
 		{{ $end := sub (len $pages) 1 }}
 		{{ range $i, $page := $pages }}
