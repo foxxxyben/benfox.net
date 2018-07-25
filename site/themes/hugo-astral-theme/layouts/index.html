@@ -6,14 +6,14 @@
 			{{ $pages := where .Data.Pages "Section" $cat.section }}
 			{{ $end := sub (len $pages) 1 }}
 			{{ range $i, $page := $pages }}
-				<article id="$cat{{ if ne $i 0 }}-{{$i}}{{end}}" class="panel">
-					{{ partial $cat $page }}
+				<article id="$cat.name{{ if ne $i 0 }}-{{$i}}{{end}}" class="panel">
+					{{ partial $cat.section . }}
 				</article>
 
 				{{ if and (ne $i $end) (ne $pos (len .Site.Params.nav.main)) }}
-					{{ $next := printf "%s-%d" $cat (add $i 1)}}
+					{{ $next := printf "%s-%d" $cat.name (add $i 1)}}
 					{{ if eq $i $end }}
-						{{ $next := (index .Site.Params.nav.main (add $pos 1)) }}
+						{{ $next := (index .Site.Params.nav.main (add $pos 1)).name }}
 					{{end}}
 					<a href="#{{$next}}">
 						<span class="arrow next icon fa-chevron-right"><span>Next</span></span>
@@ -21,11 +21,11 @@
 				{{end}}
 
 				{{ if and (ne $i 0) (ne $pos 0) }}
-					{{ $prev := printf "%s-%d" $cat (sub $i 1)}}
+					{{ $prev := printf "%s-%d" $cat.name (sub $i 1)}}
 					{{ if eq $i 0 }}
 						{{ $prevCat := index .Site.Params.nav.main (sub $pos 1) }}
 						{{ $prevPages := where .Data.Pages "Section" $prevCat }}
-						{{ $prev := printf "%s-%d" $prevCat (sub (len $prevPages) 1) }}
+						{{ $prev := printf "%s-%d" $prevCat.name (sub (len $prevPages) 1) }}
 					{{end}}
 					<a href="#{{$prev}}">
 						<span class="arrow prev icon fa-chevron-left"><span>Prev</span></span>
