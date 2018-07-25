@@ -1,5 +1,5 @@
 <nav id="nav">
-  {{ range .Site.menu.main }}
+  {{ range .Site.Params.menu.main }}
     {{ if not .hide }}
       <a href="#{{.name}}" class="icon {{.icon}}"><span>{{.name}}</span></a>
   {{end}}

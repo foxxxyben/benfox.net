@@ -7,37 +7,37 @@ googleAnalytics = ""
 # Define how many posts should appear on a site
 paginate = 10
 
-	[menu.main.home]
+	[params.menu.main.home]
 	name = "Home"
 	icon = "fa-home"
 	hide = false
 	template = "home"
 
-	[menu.main.education]
+	[params.menu.main.education]
 	name = "Education"
 	icon = "fa-user-graduate"
 	hide = false
 	template = "consulting"
 
-	[menu.main.agriculture]
+	[params.menu.main.agriculture]
 	name = "Agriculture"
 	icon = "fa-leaf"
 	hide = false
 	template = "consulting"
 
-	[menu.main.technology]
+	[params.menu.main.technology]
 	name = "Technology"
 	icon = "fa-code-branch"
 	hide = false
 	template = "consulting"
 
-	[menu.main.news]
+	[params.menu.main.news]
 	name = "News"
 	icon = "fa-comment-dots"
 	hide  = true
 	title = "Latest News"
 
-	[menu.main.contact]
+	[params.menu.main.contact]
 	name = "Contact"
 	icon = "fa-envelope"
 	hide  = false
