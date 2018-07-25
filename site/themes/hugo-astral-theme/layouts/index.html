@@ -4,9 +4,9 @@
 	{{ range $pos, $cat := $cats }}
 		{{ $pages := where .Data.Pages "Section" $cat }}
 		{{ $end := sub (len $pages) 1 }}
-		{{ range $i, $e := $pages }}
+		{{ range $i, $page := $pages }}
 			<article id="$cat{{ if ne $i 0 }}-{{$i}}{{end}}" class="panel">
-				{{ partial $cat . }}
+				{{ partial $cat $page }}
 			</article>
 
 			{{ if and (ne $i $end) (ne $pos (len $cats)) }}
