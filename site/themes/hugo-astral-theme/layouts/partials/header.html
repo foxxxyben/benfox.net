@@ -1,18 +1,6 @@
 <nav id="nav">
-	{{ if not .Site.Params.about.hide }}
-		<a href="#" class="icon fa-home"><span>Home</span></a>
-	{{ end }}
-
-	{{ if not .Site.Params.portfolio.hide }}
-		<a href="#work" class="icon fa-folder"><span>Work</span></a>
-	{{ end }}
-
-	{{ if not .Site.Params.recentposts.hide }}
-
-	{{ end }}
-
-	{{ if not .Site.Params.contact.hide }}
-		<a href="#contact" class="icon fa-envelope"><span>Contact</span></a>
-	{{ end }}
-
-	</nav>
+  {{ range .Site.Params.nav.main }}
+    {{ if not .hide }}
+      <a href="#{{.name}}" class="icon {{.icon}}"><span>{{.name}}</span></a>
+  {{end}}
+</nav>
