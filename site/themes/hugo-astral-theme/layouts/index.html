@@ -3,7 +3,7 @@
 	{{ range $pos, $cat := .Site.Params.nav.main }}
 		{{ if not .hide }}
 			{{ printf "Category:%s; Position:%d" $cat.name $pos}}
-			{{ $pages := where .Data.Pages "Section" "education" }}
+			{{ $pages := where Site.Data.Pages "Section" "education" }}
 			{{ $end := sub (len $pages) 1 }}
 			{{ range $i, $page := $pages }}
 				<article id="$cat.name{{ if ne $i 0 }}-{{$i}}{{end}}" class="panel">
