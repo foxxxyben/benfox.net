@@ -1,0 +1,24 @@
+{{ if not and (eq $1 $end) (eq $pos (len .Site.Params.nav.main)) }}
+  {{ $next := printf "%s-%d" $cat.name (add $i 1)}}
+  {{ if eq $i $end }}
+    {{ $next := (index .Site.Params.nav.main (add $pos 1)).name }}
+  {{end}}
+  <a href="#{{$next}}">
+    <span class="arrow next icon fa-chevron-right"><span>Next</span></span>
+  </a>
+{{end}}
+
+{{ if not and (eq $i 0) (eq $pos 0) }}
+  {{ $prev := printf "%s-%d" $cat.name (sub $i 1)}}
+  {{ if eq $i 1 }}
+    {{ $prev := $cat.name }}
+  {{end}}
+  {{ if eq $i 0 }}
+    {{ $prevCat := index .Site.Params.nav.main (sub $pos 1) }}
+    {{ $prevPages := where .Data.Pages "Section" $prevCat }}
+    {{ $prev := printf "%s-%d" $prevCat.name (sub (len $prevPages) 1) }}
+  {{end}}
+  <a href="#{{$prev}}">
+    <span class="arrow prev icon fa-chevron-left"><span>Prev</span></span>
+  </a>
+{{end}}
