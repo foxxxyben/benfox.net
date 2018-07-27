@@ -3,9 +3,10 @@
 {{ if not and (not .NextInSection) (eq $sectionIndex (sub (len .Site.Params.nav.main) 1)) }}
   {{ $next := printf "%s-%s" .Section .NextInSection.File.BaseFileName }}
   {{ if not .NextInSection }}
-    {{ $next := (index .Site.Params.nav.main (add $sectionIndex 1)).section }}
+    {{ $nextSection := (index .Site.Params.nav.main (add $sectionIndex 1)).section }}
+    {{ $next := printf "%s-%s" $nextSection ((.Site.Sections.Get $nextSection).Get 0) }}
   {{end}}
-  <a href="#{{$next}}{{}}">
+  <a href="#{{$next}}">
     <span class="arrow next icon fa-chevron-right"><span>Next</span></span>
   </a>
 {{end}}
@@ -16,7 +17,7 @@
     {{ $prevSection := (index .Site.Params.nav.main (sub $sectionIndex 1)).section }}
     {{ $prev := printf "%s-%s" $prevSection ((.Site.Sections.Get $prevSection).Get (sub (len (.Site.Sections.Get $prevSection)) 1)) }}
   {{end}}
-  <a href="#{{$prev}}{{}}">
+  <a href="#{{$prev}}">
     <span class="arrow next icon fa-chevron-right"><span>Next</span></span>
   </a>
 {{end}}
