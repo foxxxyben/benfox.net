@@ -1,5 +1,5 @@
 {{ define "main" }}
-	{{ range $sectionIndex $nav := .Site.Params.nav.main }}
+	{{ range $sectionIndex, $nav := .Site.Params.nav.main }}
 		{{ if not .hide }}
 			{{ range $i, $page := where $.Data.Pages "Section" $nav.section }}
 				{{ .Scratch.Set "sectionIndex" $sectionIndex }}
