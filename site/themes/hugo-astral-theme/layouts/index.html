@@ -1,7 +1,8 @@
 {{ define "main" }}
-	{{ range $cat := .Site.Params.nav.main }}
+	{{ range $sectionIndex $nav := .Site.Params.nav.main }}
 		{{ if not .hide }}
-			{{ range $i, $page := where $.Data.Pages "Section" $cat.section }}
+			{{ range $i, $page := where $.Data.Pages "Section" $nav.section }}
+				{{ .Scratch.Set "sectionIndex" $sectionIndex }}
 					{{ partial $cat.template . }}
 			{{  end }}
 		{{  end }}

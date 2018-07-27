@@ -1,4 +1,4 @@
-{{ $sectionIndex := index .Site.Params.nav.main .Section }}
+{{ $sectionIndex := .Scratch.sectionIndex }}
 
 {{ if not and (not .NextInSection) (eq $sectionIndex (sub (len .Site.Params.nav.main) 1)) }}
   {{ $next := printf "%s-%s" .Section .NextInSection.File.BaseFileName }}
