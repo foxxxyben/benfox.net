@@ -1,11 +1,8 @@
 {{ define "main" }}
-
-	{{ range $pos, $cat := .Site.Params.nav.main }}
+	{{ range $cat := .Site.Params.nav.main }}
 		{{ if not .hide }}
-			{{ $pages := where $.Data.Pages "Section" $cat.section }}
-			{{ $end := sub (len $pages) 1 }}
-			{{ range $i, $page := $pages }}
-				{{ partial $cat.template . }}
+			{{ range $i, $page := where $.Data.Pages "Section" $cat.section }}
+					{{ partial $cat.template . }}
 			{{  end }}
 		{{  end }}
 	{{  end }}

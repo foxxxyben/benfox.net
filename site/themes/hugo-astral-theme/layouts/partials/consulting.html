@@ -1,6 +1,7 @@
-<article id="{{$cat.name}}{{ if ne $i 0 }}-{{$i}}{{end}}" class="panel" style="background-image:url({{ .Params.image }}); background-size:cover;">
-	<header >
+<article id="{{ .Section }}-{{ .File.BaseFileName }}" class="panel" style="background-image:url({{ .Params.image }}); background-size:cover;">
+	<header>
 		<h1>{{ .Title | safeHTML }}</h1>
 		<p>{{ .Content | markdownify }}</p>
+		{{ partial "scrollnav" . }}
 	</header>
 </article>
