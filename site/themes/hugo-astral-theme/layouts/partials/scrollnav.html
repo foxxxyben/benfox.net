@@ -1,6 +1,7 @@
 {{ $sectionIndex := .Scratch.Get "sectionIndex" }}
 
 {{ if not (and (not .NextInSection) (eq $sectionIndex (sub (len .Site.Params.nav.main) 1))) }}
+  {{ $next := "" }}
   {{ if .NextInSection }}
     {{ $next := printf "%s-%s" .Section .NextInSection.File.BaseFileName }}
   {{ else }}
@@ -13,6 +14,7 @@
 {{end}}
 
 {{ if not (and (not .PrevInSection) (eq $sectionIndex 0)) }}
+  {{ $prev := "" }}
   {{ if .PrevInSection }}
     {{ $prev := printf "%s-%s" .Section .PrevInSection.File.BaseFileName }}
   {{ else }}
