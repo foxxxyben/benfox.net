@@ -6,7 +6,7 @@
     {{ $next := printf "%s-%s" .Section .NextInSection.File.BaseFileName }}
   {{ else }}
     {{ $nextSection := (index .Site.Params.nav.main (add $sectionIndex 1)).section }}
-    {{ $next := printf "%s-%s" $nextSection ((.Site.Sections.Get $nextSection).Get 0) }}
+    {{ $next := printf "%s-%s" $nextSection (index (where $.Data.Pages "Section" $nextSection) 0).File.BaseFileName }}
   {{end}}
   <a href="#{{$next}}">
     <span class="arrow next icon fa-chevron-right"><span>Next</span></span>
@@ -19,7 +19,7 @@
     {{ $prev := printf "%s-%s" .Section .PrevInSection.File.BaseFileName }}
   {{ else }}
     {{ $prevSection := (index .Site.Params.nav.main (sub $sectionIndex 1)).section }}
-    {{ $prev := printf "%s-%s" $prevSection ((.Site.Sections.Get $prevSection).Get (sub (len (.Site.Sections.Get $prevSection)) 1)) }}
+    {{ $prev := printf "%s-%s" $prevSection (last 1 (where $.Data.Pages "Section" $prevSection)).File.BaseFileName }}
   {{end}}
   <a href="#{{$prev}}">
     <span class="arrow next icon fa-chevron-right"><span>Next</span></span>
