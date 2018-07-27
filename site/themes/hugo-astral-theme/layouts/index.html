@@ -3,7 +3,7 @@
 		{{ if not .hide }}
 			{{ range $i, $page := where $.Data.Pages "Section" $nav.section }}
 				{{ .Scratch.Set "sectionIndex" $sectionIndex }}
-					{{ partial $cat.template . }}
+					{{ partial $nav.template . }}
 			{{  end }}
 		{{  end }}
 	{{  end }}
