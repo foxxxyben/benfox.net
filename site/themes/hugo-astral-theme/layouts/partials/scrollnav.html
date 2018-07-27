@@ -1,4 +1,4 @@
-{{ $sectionIndex := .Scratch.sectionIndex }}
+{{ $sectionIndex := .Scratch.Get "sectionIndex" }}
 
 {{ if not and (not .NextInSection) (eq $sectionIndex (sub (len .Site.Params.nav.main) 1)) }}
   {{ $next := printf "%s-%s" .Section .NextInSection.File.BaseFileName }}
