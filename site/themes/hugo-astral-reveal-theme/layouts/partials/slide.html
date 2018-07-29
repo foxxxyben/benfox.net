@@ -1,3 +1,4 @@
+{{ $params := .Params }}
 <section
   id="{{ .Params.hashID }}"
 
@@ -7,7 +8,7 @@
 
   {{ if .Params.background }}
     {{ range $i, $e := .Params.background.params }}
-      {{ if .Params.background.full }}
+      {{ if $params.background.full }}
         data-background-{{ $i }}="{{ $e }}"
       {{ else }}
         style="background: {{ cond (eq $i "image") "url({{ $e }})" $e }};"
