@@ -7,12 +7,17 @@
   {{ end }}
 
   {{ if .Params.background }}
-    {{ range $i, $e := .Params.background.params }}
-      {{ if $params.background.full }}
+    {{ if .Params.background.full }}
+
+      {{ range $i, $e := .Params.background.params }}
         data-background-{{ $i }}="{{ $e }}"
-      {{ else }}
-        style="background-{{ $i }}: {{ cond (eq $i "image") (printf "url(%s)" $e) $e }};"
       {{ end }}
+
+    {{ else }}
+      style="{{ range $i, $e := .Params.background.params }}
+        background-{{ $i }}: {{ cond (eq $i "image") (printf "url(%s)" $e) $e }};
+        {{ end }}
+      "
     {{ end }}
   {{ end }}
 
