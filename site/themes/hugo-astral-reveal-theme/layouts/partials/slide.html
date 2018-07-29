@@ -1,13 +1,24 @@
 <section
-  id="{{ .URL }}"
+  id="{{ .Params.hashID }}"
 
   {{ if .Params.autoslide }}
     data-autoslide="{{ .Params.autoslide }}"
   {{ end }}
 
   {{ if .Params.background }}
-    {{ range $i, $e := .Params.background }}
-      data-background-{{ $i }}="{{ $e }}"
+    {{ if .Params.background.full }}
+      {{ range $i, $e := .Params.background.params }}
+        data-background-{{ $i }}="{{ $e }}"
+      {{ end }}
+    {{ else }}
+      data-state="
+      {{ range $i, $e := .Params.background.params }}
+        {{ if eq $i "image" }}
+          {{ $i := printf "url("%s")" $i }}
+        {{ end }}
+        {{  printf "%s " $i }}
+      {{ end }}
+      "
     {{ end }}
   {{ end }}
 

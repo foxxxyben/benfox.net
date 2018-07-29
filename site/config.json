@@ -6,7 +6,8 @@
     "reveal_theme": "black",
     "revealjs": {
       "controls": true,
-      "progress": true,
+      "controlsLayout": "edges",
+      "progress": false,
       "history": true,
       "center": true,
       "height": 800,

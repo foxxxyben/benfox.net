@@ -1,4 +1,6 @@
 ---
+hashID: "Home"
+hover: "Welcome"
 weight: 1
 ---
 <img align="left" src="benfox.jpg">
