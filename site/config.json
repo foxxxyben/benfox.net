@@ -1,0 +1,24 @@
+{
+  "baseURL": "/",
+  "title": "Hugo Theme RevealJS",
+  "theme": "hugo-astral-reveal-theme",
+  "params": {
+    "reveal_theme": "black",
+    "revealjs": {
+      "controls": true,
+      "progress": true,
+      "history": true,
+      "center": true,
+      "height": 800,
+      "width": 1500
+    }
+  },
+  "disableKinds": [
+    "sitemap"
+  ],
+  "outputs": {
+    "home": [
+      "html"
+    ]
+  }
+}
