@@ -11,12 +11,13 @@
         data-background-{{ $i }}="{{ $e }}"
       {{ end }}
     {{ else }}
-      data-state="
+      data-state="background:
       {{ range $i, $e := .Params.background.params }}
         {{ if eq $i "image" }}
-          {{ $i := printf "url("%s")" $i }}
+          url({{ $e }})
+        {{ else }}
+          {{ $e }}
         {{ end }}
-        {{  printf "%s " $i }}
       {{ end }}
       "
     {{ end }}
