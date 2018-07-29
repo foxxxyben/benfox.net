@@ -11,7 +11,7 @@
       {{ if $params.background.full }}
         data-background-{{ $i }}="{{ $e }}"
       {{ else }}
-        style="background-{{ $i }}: {{ cond (eq $i "image") (printf "url(%s)" $e) $e }}"
+        style="background-{{ $i }}: {{ cond (eq $i "image") (printf "url(%s)" $e) $e }};"
       {{ end }}
     {{ end }}
   {{ end }}
