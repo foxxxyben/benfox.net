@@ -11,7 +11,7 @@
         data-background-{{ $i }}="{{ $e }}"
       {{ end }}
     {{ else }}
-      data-state="background:
+      style="background:
       {{ range $i, $e := .Params.background.params }}
         {{ if eq $i "image" }}
           url({{ $e }})
@@ -19,7 +19,7 @@
           {{ $e }}
         {{ end }}
       {{ end }}
-      "
+      ;"
     {{ end }}
   {{ end }}
 
