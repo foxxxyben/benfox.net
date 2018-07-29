@@ -9,11 +9,10 @@
     {{ range $i, $e := .Params.background.params }}
       {{ if .Params.background.full }}
         data-background-{{ $i }}="{{ $e }}"
+      {{ else }}
+        style="background: {{ cond (eq $i "image") "url({{ $e }})" $e }};"
       {{ end }}
-    {{ else }}
-      style="background: {{ cond (eq $i "image") "url({{ $e }})" $e }};"
     {{ end }}
-  {{ end }}
 
   {{ if .Params.transition }}
     data-transition="{{ .Params.transition }}"
