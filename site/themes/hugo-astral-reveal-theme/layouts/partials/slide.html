@@ -6,20 +6,12 @@
   {{ end }}
 
   {{ if .Params.background }}
-    {{ if .Params.background.full }}
-      {{ range $i, $e := .Params.background.params }}
+    {{ range $i, $e := .Params.background.params }}
+      {{ if .Params.background.full }}
         data-background-{{ $i }}="{{ $e }}"
       {{ end }}
     {{ else }}
-      style="background:
-      {{ range $i, $e := .Params.background.params }}
-        {{ if eq $i "image" }}
-          url({{ $e }})
-        {{ else }}
-          {{ $e }}
-        {{ end }}
-      {{ end }}
-      ;"
+      style="background: {{ cond (eq $i "image") "url({{ $e }})" $e }};"
     {{ end }}
   {{ end }}
 
