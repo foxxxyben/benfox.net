@@ -1,10 +1,9 @@
 {{ define "main" }}
-	{{ range $sectionIndex, $nav := .Site.Params.nav.main }}
-		{{ if not .hide }}
-			{{ range $i, $page := where $.Data.Pages "Section" $nav.section }}
-				{{ .Scratch.Set "sectionIndex" $sectionIndex }}
-					{{ partial $nav.template . }}
-			{{  end }}
-		{{  end }}
-	{{  end }}
+
+  <div id="main">
+    {{ range .Site.Sections }}
+        {{ partial .Params.template . }}
+    {{ end }}
+  </div>
+
 {{ end }}

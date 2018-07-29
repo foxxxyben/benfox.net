@@ -1,8 +1,7 @@
-<article id="{{ .Section }}-{{ .File.BaseFileName }}" class="panel intro">
+<article id="home" class="panel intro">
 	<header>
 		<h1>{{ .Title | safeHTML }}</h1>
 		<p>{{ .Content | markdownify }}</p>
 		<img src="{{ .Params.image }}" alt="" />
-		{{ partial "scrollnav" . }}
 	</header>
 </article>

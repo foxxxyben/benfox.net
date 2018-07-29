@@ -1,19 +1,18 @@
 ---
 title: "Contact"
-logo: "/img/logo.svg"
+linktitle: "contact"
+hover: "Contact"
+icon: "fa-envelope"
+weight: 0
 contact_entries:
   - heading: Location
-    text: "3153 Lynn Avenue, South San Francisco, California 94080"
-  - heading: Working hours
-    text: "Monday – Saturday: 9AM – 7PM We’re closed on Sundays"
+    text: "4001 Kennedy Rd #7, Richland, WA 99352"
+  - heading: Telephone
+    text: "509-591-7757"
+form:
+    name = "Name"
+    email = "Email"
+    message = "Message"
+    submit = "Send message"
 ---
-
-We’d love to get in touch with you and hear your ideas and
-questions. We strive to grow and improve constantly and your feedback
-is valuable for us.
-
-<h3 class="f4 b lh-title mb2">How can I get…?</h3>
-
-You can also use the form below for any inquiries about coffee
-availability, monthly subscriptions and scheduling a 1-on-1 session
-with our baristas. Don’t be shy, drop us a line!
+If you want to learn more about my experience and the services I can offer, or have a need in the community you would like me to collaborate or consult on, please fill out this brief contact form and I will quickly get in touch to meet with you and your organization. Thank you.

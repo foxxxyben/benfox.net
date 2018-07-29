@@ -1,6 +1,7 @@
 ---
-hashID: "Home"
-hover: "Welcome"
+linktitle: "Home"
+hover: "Home"
+icon: "fa-home"
 weight: 1
 ---
 <img align="left" src="benfox.jpg">

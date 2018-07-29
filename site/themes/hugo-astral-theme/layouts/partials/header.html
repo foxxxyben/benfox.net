@@ -1,7 +1,5 @@
 <nav id="nav">
-  {{ range .Site.Params.nav.main }}
-    {{ if not .hide }}
-      <a href="#{{.name}}" class="icon {{.icon}}"><span>{{.name}}</span></a>
-	  {{end}}
-	{{end}}
+  {{ range .Site.Sections }}
+    <a href="#{{ .Params.linktitle }}" class="icon {{ .Params.icon }}"><span>{{ .Params.hover }}</span></a>
+  {{ end }}
 </nav>

@@ -1,7 +1,4 @@
-<article id="{{ .Section }}-{{ .File.BaseFileName }}" class="panel" style="background-image:url({{ .Params.image }}); background-size:cover;">
-	<header>
-		<h1>{{ .Title | safeHTML }}</h1>
-		<p>{{ .Content | markdownify }}</p>
-		{{ partial "scrollnav" . }}
-	</header>
-</article>
+{{ partial article . }}
+{{ range .Section.Pages }}
+	{{ partial article . }}
+{{ end }}

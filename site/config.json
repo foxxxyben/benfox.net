@@ -1,7 +1,7 @@
 {
   "baseURL": "/",
-  "title": "Hugo Theme RevealJS",
-  "theme": "hugo-astral-reveal-theme",
+  "title": "Ben Fox, Consultant",
+  "theme": "hugo-astral-theme",
   "params": {
     "reveal_theme": "black",
     "revealjs": {
