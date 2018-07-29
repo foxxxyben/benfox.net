@@ -10,7 +10,9 @@
       "history": true,
       "center": true,
       "height": 800,
-      "width": 1500
+      "width": 1500,
+      "parallaxBackgroundImage": "images/bg.jpg",
+      "parallaxBackgroundSize": "100% 100%"
     }
   },
   "disableKinds": [
