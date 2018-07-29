@@ -13,6 +13,7 @@
         style="background: {{ cond (eq $i "image") "url({{ $e }})" $e }};"
       {{ end }}
     {{ end }}
+  {{ end }}
 
   {{ if .Params.transition }}
     data-transition="{{ .Params.transition }}"
