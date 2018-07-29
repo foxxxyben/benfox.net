@@ -14,8 +14,15 @@
       {{ end }}
 
     {{ else }}
-      style="{{ range $i, $e := .Params.background.params }}
-        background-{{ $i }}: {{ cond (eq $i "image") (printf "url(%s)" $e) $e }};
+      style="
+        {{ range $i, $e := .Params.background.params }}
+          background-{{ $i }}:
+            {{ if eq $i "image" }}
+              url({{ $e }})
+            {{ else }}
+              {{ $e }}
+            {{ end }}
+          ;
         {{ end }}
       "
     {{ end }}
