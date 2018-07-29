@@ -8,11 +8,9 @@
 
   {{ if .Params.background }}
     {{ range $i, $e := .Params.background.params }}
-      {{ if $params.background.full }}
+
         data-background-{{ $i }}="{{ $e }}"
-      {{ else }}
-        style="background: {{ cond (eq $i "image") (printf "url(%s)" $e) $e }}"
-      {{ end }}
+      
     {{ end }}
   {{ end }}
 
