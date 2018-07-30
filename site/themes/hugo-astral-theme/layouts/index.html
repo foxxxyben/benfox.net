@@ -1,6 +1,5 @@
 {{ define "main" }}
 
-  <div id="main">
     {{ range .Site.Sections }}
         {{ partial "article.html" . }}
 
@@ -9,6 +8,5 @@
 				{{ end }}
 
     {{ end }}
-  </div>
 
 {{ end }}
