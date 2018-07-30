@@ -2,7 +2,12 @@
 
   <div id="main">
     {{ range .Site.Sections }}
-        {{ partial .Params.template . }}
+        {{ partial "article.html" . }}
+
+				{{ range .Pages }}
+						{{ partial "article.html" . }}
+				{{ end }}
+
     {{ end }}
   </div>
 
