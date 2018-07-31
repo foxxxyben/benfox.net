@@ -99,14 +99,14 @@
 	function activateSwipe($panel) {
 		// Activate Prev Swipe.
 			if ($panel.previousSibling) {
-				$prev = document.getElementsByClassName("swipe prev");
+				$prev = $swipe.getElementsByClassName("swipe prev");
 				$prev.href = "#"+$panel.previousSibling.id;
 				$prev.show()
 			};
 
 		// Activate Next Swipe.
 			if ($panel.nextSibling) {
-				$next = document.getElementsByClassName("swipe next");
+				$next = $swipe.getElementsByClassName("swipe next");
 				$next.href = "#"+$panel.nextSibling.id;
 				$next.show()
 			};
@@ -157,7 +157,7 @@
 				// Delay.
 					setTimeout(function() {
 
-						$swipe_links.getElementsByClassName('swipe').hide()
+						$swipe.getElementsByClassName('swipe').hide()
 
 						// Hide all panels.
 							$panels.hide();
