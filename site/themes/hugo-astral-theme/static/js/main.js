@@ -11,7 +11,8 @@
 		$wrapper = $('#wrapper'),
 		$main = $('#main'),
 		$panels = $main.children('.panel'),
-		$nav = $('#nav'), $nav_links = $nav.children('a');
+		$nav = $('#nav'), $nav_links = $nav.children('a')
+		$swipe = $('#swipe'), $swipe_links = $swipe.children('a');
 
 	// Breakpoints.
 		breakpoints({
@@ -50,12 +51,13 @@
 
 			});
 
+
 	// Panels.
 
 		// Initialize.
 			(function() {
 
-				var $panel, $link;
+				var $panel, $link, i$;
 
 				// Get panel, link.
 					if (window.location.hash) {
@@ -85,10 +87,34 @@
 					$link
 						.addClass('active');
 
+				// Index of current panel.
+					$i = $panels.indexof($panel);
+					activateSwipe($i)
+
 				// Reset scroll.
 					$window.scrollTop(0);
 
 			})();
+
+	// Activate Swipe Navigation.
+	function activateSwipe($i) {
+		// Activate Prev Swipe.
+			if ($i != 0) {
+				$prev = document.getElementsByClassName("swipe prev");
+				$prevLink = $panels[$i-1];
+				$prev.href = "#"+$prevLink.id;
+				$prev.show()
+			};
+
+		// Activate Next Swipe.
+			if ($i != ($panels.length -1)) {
+				$next = document.getElementsByClassName("swipe next");
+				$nextLink = $panels[$i+1];
+				$next.href = "#"+$nextLink.id;
+				$next.show()
+			};
+	};
+
 
 		// Hashchange event.
 			$window.on('hashchange', function(event) {
@@ -134,11 +160,15 @@
 				// Delay.
 					setTimeout(function() {
 
+						$swipe_links.getElementsByClassName('swipe').hide()
+
 						// Hide all panels.
 							$panels.hide();
 
 						// Show target panel.
 							$panel.show();
+
+							activateSwipe($i);
 
 						// Set new max/min height.
 							$main
