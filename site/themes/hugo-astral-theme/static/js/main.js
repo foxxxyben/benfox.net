@@ -157,7 +157,7 @@
 				// Delay.
 					setTimeout(function() {
 
-						$document.getElementsByClassName('swipe').hide();
+						document.getElementsByClassName('swipe').hide();
 
 						// Hide all panels.
 							$panels.hide();
