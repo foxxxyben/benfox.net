@@ -12,7 +12,8 @@
 		$main = $('#main'),
 		$panels = $main.children('.panel'),
 		$nav = $('#nav'), $nav_links = $nav.children('a')
-		$swipe = $('#swipe'), $swipe_links = $swipe.children('a');
+		$swipe = $('#swipe'),
+		$swipe_prev = $swipe.children('.prev'), $swipe_next = $swipe.children('.next');
 
 	// Breakpoints.
 		breakpoints({
@@ -99,16 +100,14 @@
 	function activateSwipe($panel) {
 		// Activate Prev Swipe.
 			if ($panel.previousSibling) {
-				$prev = document.getElementsByClassName("swipe prev");
-				$prev.href = "#"+$panel.previousSibling.id;
-				$prev.show()
+				$swipe_prev.attr("href", "#"+$panel.previousSibling.id);
+				$swipe_prev.show();
 			};
 
 		// Activate Next Swipe.
 			if ($panel.nextSibling) {
-				$next = document.getElementsByClassName("swipe next");
-				$next.href = "#"+$panel.nextSibling.id;
-				$next.show()
+				$swipe_next.attr("href", "#"+$panel.nextSibling.id);
+				$swipe_next.show();
 			};
 	};
 
@@ -157,7 +156,8 @@
 				// Delay.
 					setTimeout(function() {
 
-						document.getElementsByClassName('swipe').hide();
+						//Hide swipe navigation.
+							$swipe.hide();
 
 						// Hide all panels.
 							$panels.hide();
