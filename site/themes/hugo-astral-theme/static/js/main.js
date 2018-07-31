@@ -143,11 +143,11 @@
 				var i = $panels.indexof($panel);
 
 					if ($i != 0) {
-						document.getElementsByClassName(swipe prev).show()
+						document.getElementsByClassName("swipe prev").show()
 					};
 
 					if ($i != ($panels.length -1)) {
-						document.getElementsByClassName(swipe next).show()
+						document.getElementsByClassName("swipe next").show()
 					};
 
 				// Set new max/min height.
