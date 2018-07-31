@@ -2179,7 +2179,7 @@ input, select, textarea {
 
 /* Prev/Next Arrows */
 
-.arrow {
+.swipe {
 	display: block;
 	position: absolute;
 	top: 50%;
@@ -2207,18 +2207,18 @@ input, select, textarea {
 	right: 0;
 }
 
-.arrow:before {
+.swipe:before {
 	position: relative;
 	padding-right: 0;
 	top: 0.125em;
 }
 
-.arrow span {
+.swipe span {
 	display: block;
 	text-indent: -9999px;
 }
 
-.arrow:hover {
+.swipe:hover {
 	width: 3em;
 	padding-right: 0.25em;
 }

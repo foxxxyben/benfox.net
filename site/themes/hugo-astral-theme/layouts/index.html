@@ -1,5 +1,10 @@
 {{ define "main" }}
-
+<a href="#prev">
+	<span class="swipe prev icon fa-chevron-right"><span>Next</span></span>
+</a>
+<a href="#next">
+	<span class="swipe next icon fa-chevron-right"><span>Next</span></span>
+</a>
     {{ range .Site.Sections }}
         {{ partial "article.html" . }}
 
