@@ -88,7 +88,7 @@
 						.addClass('active');
 
 				// Index of current panel.
-					$i = $panels.indexof($panel);
+					$i = $panels.indexOf($panel);
 					activateSwipe($i)
 
 				// Reset scroll.
