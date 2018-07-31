@@ -24,11 +24,15 @@
 			xsmall:  [ null,      '360px'  ]
 		});
 
+
+// Initialize.
+
 	// Play initial animations on page load.
 		$window.on('load', function() {
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
 			}, 100);
+			checkHash();
 		});
 
 // Nav.
@@ -58,12 +62,15 @@
 		activatePanel();
 	};
 
+	$swipe_prev.click(prevPanel());
+
 	//Swipe Next:
 	function nextPanel() {
 		$panel = $panel.next();
 		activatePanel();
 	};
 
+	$swipe_next.click(nextPanel());
 
 	// Activate Swipe Navigation.
 	function activateSwipe() {
@@ -80,27 +87,27 @@
 
 // Panels.
 
-	// Initialize.
-	checkHash();
+	// Hashchange event.
+	$window.on('hashchange', checkHash());
 
 	//Check the current hash anchor.
 		function checkHash() {
 
-	// Get panel, link.
-	if (window.location.hash) {
+		// Get panel, link.
+		if (window.location.hash) {
 
-			$panel = $panels.filter(window.location.hash);
-			$link = $nav_links.find(function(link) {
-				return link.includes(window.location.hash)
-			});
+				$panel = $panels.filter(window.location.hash);
+				$link = $nav_links.find(function(link) {
+					return link.includes(window.location.hash)
+				});
 
-			// No target panel? Bail.
-				if ($panel.length == 0)
-					return;
+				// No target panel? Bail.
+					if ($panel.length == 0)
+						return;
 
-		}
+			}
 
-		focusPanel();
+			focusPanel();
 	};
 
 	//Activate Panel
@@ -164,9 +171,6 @@
 		}, 250);
 
 	};
-
-	// Hashchange event.
-	$window.on('hashchange', checkHash());
 
 	// IE: Fixes.
 		if (browser.name == 'ie') {

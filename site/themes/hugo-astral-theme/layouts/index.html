@@ -1,6 +1,6 @@
 {{ define "main" }}
-	<span onclick="prevPanel" class="swipe prev icon fa-chevron-left"><span>Next</span></span>
-	<span onclick="nextPanel" class="swipe next icon fa-chevron-right"><span>Next</span></span>
+	<span class="swipe prev icon fa-chevron-left"><span>Next</span></span>
+	<span class="swipe next icon fa-chevron-right"><span>Next</span></span>
 
     {{ range .Site.Sections }}
         {{ partial "article.html" . }}
