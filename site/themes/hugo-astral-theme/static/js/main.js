@@ -12,7 +12,7 @@
 		$main = $('#main'),
 		$panels = $main.children('.panel'),
 		$nav = $('#nav'), $nav_links = $nav.children('a')
-		$swipe = $('#swipe'),
+		$swipe = $('.swipe'),
 		$swipe_prev = $swipe.children('.prev'), $swipe_next = $swipe.children('.next');
 
 	// Breakpoints.
