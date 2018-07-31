@@ -88,8 +88,7 @@
 						.addClass('active');
 
 				// Index of current panel.
-					$i = $panels.indexOf($panel);
-					activateSwipe($i)
+					activateSwipe($panel)
 
 				// Reset scroll.
 					$window.scrollTop(0);
@@ -97,20 +96,18 @@
 			})();
 
 	// Activate Swipe Navigation.
-	function activateSwipe($i) {
+	function activateSwipe($panel) {
 		// Activate Prev Swipe.
-			if ($i != 0) {
+			if ($panel.previousSibling) {
 				$prev = document.getElementsByClassName("swipe prev");
-				$prevLink = $panels[$i-1];
-				$prev.href = "#"+$prevLink.id;
+				$prev.href = "#"+$panel.previousSibling.id;
 				$prev.show()
 			};
 
 		// Activate Next Swipe.
-			if ($i != ($panels.length -1)) {
+			if ($panel.nextSibling) {
 				$next = document.getElementsByClassName("swipe next");
-				$nextLink = $panels[$i+1];
-				$next.href = "#"+$nextLink.id;
+				$next.href = "#"+$panel.nextSibling.id;
 				$next.show()
 			};
 	};
@@ -168,7 +165,7 @@
 						// Show target panel.
 							$panel.show();
 
-							activateSwipe($i);
+							activateSwipe($panel);
 
 						// Set new max/min height.
 							$main

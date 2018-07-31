@@ -1,5 +1,6 @@
 ---
 title: "And now I am offering my skills and services to the families and communities of the Pacific Northwest"
+linktitle: "washington"
 weight: 3
 background: story/tricities.jpg
 ---

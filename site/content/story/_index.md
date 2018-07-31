@@ -1,6 +1,6 @@
 ---
 title: "In 2005 I began my <br>consulting career in New York..."
-linktitle: "about"
+linktitle: "consulting"
 icon: "fa-user-graduate"
 hover: "My Story"
 weight: 2

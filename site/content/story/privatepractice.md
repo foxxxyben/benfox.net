@@ -1,5 +1,6 @@
 ---
 title: "That same year I started my <br>Private Practice in Brooklyn..."
+linktitle: "home-care"
 weight: 2
 background: story/playground.jpg
 ---
