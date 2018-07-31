@@ -68,12 +68,12 @@
 	// Activate Swipe Navigation.
 	function activateSwipe() {
 		// Activate Prev Swipe.
-			if $panel.prev() {
+			if ($panel.prev()) {
 				$swipe_prev.show();
 			};
 
 		// Activate Next Swipe.
-			if $panel.next() {
+			if ($panel.next()) {
 				$swipe_next.show();
 			};
 	};
