@@ -11,9 +11,7 @@
 		$wrapper = $('#wrapper'),
 		$main = $('#main'),
 		$panels = $main.children('.panel'),
-		$nav = $('#nav'), $nav_links = $nav.children('a'),
-		$swipe = $('#swipe'), $swipe_links = $swipe.children('a'),
-		$panel, $link;
+		$nav = $('#nav'), $nav_links = $nav.children('a');
 
 	// Breakpoints.
 		breakpoints({
@@ -29,27 +27,6 @@
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
 			}, 100);
-
-			// Get panel, link.
-				if (window.location.hash) {
-
-					$panel = $panels.filter(window.location.hash);
-					$link = $nav_links.find(function(link) {
-						return link.includes(window.location.hash)
-					});
-
-				}
-
-			// No panel/link? Default to first.
-				if (!$panel
-				||	$panel.length == 0) {
-
-					$panel = $panels.first();
-					$link = $nav_links.first();
-
-				}
-
-			activatePanel($panel);
 		});
 
 	// Nav.
@@ -73,114 +50,45 @@
 
 			});
 
-		// SwipeNav.
-			$swipe_links
-				.on('click', function(event) {
-
-					var href = $(this).attr('href'),
-					i = $panels.indexof($panel);
-
-						if (href == '#prev' && $i != 0) {
-							$panel = $panels[$i - 1]
-						}
-
-						else if (href == '#next' && $i != ($panels.length -1)) {
-							$panel = $panels[$i + 1]
-						}
-
-						// Not a panel link? Bail.
-						else
-							return;
-
-					// Prevent default.
-						event.preventDefault();
-						event.stopPropagation();
-
-					// Change panels.
-						if ($panel.hasAttribute(id)){
-							window.location.hash = $panel.id
-						}
-						else {
-							activatePanel($panel)
-						};
-
-				});
-
-
 	// Panels.
 
-	// Activate Function
-	function activatePanel($panel) {
+		// Initialize.
+			(function() {
 
+				var $panel, $link;
 
-		// Deactivate all panels.
-			$panels.addClass('inactive');
+				// Get panel, link.
+					if (window.location.hash) {
 
-		// Deactivate all links.
-			$nav_links.removeClass('active');
+				 		$panel = $panels.filter(window.location.hash);
+						$link = $nav_links.find(function(link) {
+							return link.includes(window.location.hash)
+						});
 
-		// Activate target link.
-			$link.addClass('active');
+					}
 
-		// Set max/min height.
-			$main
-				.css('max-height', $main.height() + 'px')
-				.css('min-height', $main.height() + 'px');
+				// No panel/link? Default to first.
+					if (!$panel
+					||	$panel.length == 0) {
 
-		// Delay.
-			setTimeout(function() {
+						$panel = $panels.first();
+						$link = $nav_links.first();
 
-				// Hide all swipe links.
-				document.getElementsByClassName(swipe).hide()
+					}
 
-				// Hide all panels.
-					$panels.hide();
+				// Deactivate all panels except this one.
+					$panels.not($panel)
+						.addClass('inactive')
+						.hide();
 
-				// Show target panel.
-					$panel.show();
-
-				// Show swipe links if not at ends.
-				var i = $panels.indexof($panel);
-
-					if ($i != 0) {
-						document.getElementsByClassName("swipe prev").show()
-					};
-
-					if ($i != ($panels.length -1)) {
-						document.getElementsByClassName("swipe next").show()
-					};
-
-				// Set new max/min height.
-					$main
-						.css('max-height', $panel.outerHeight() + 'px')
-						.css('min-height', $panel.outerHeight() + 'px');
+				// Activate link.
+					$link
+						.addClass('active');
 
 				// Reset scroll.
 					$window.scrollTop(0);
 
-				// Delay.
-					window.setTimeout(function() {
-
-						// Activate target panel.
-							$panel.removeClass('inactive');
-
-						// Clear max/min height.
-							$main
-								.css('max-height', '')
-								.css('min-height', '');
-
-						// IE: Refresh.
-							$window.triggerHandler('--refresh');
-
-						// Unlock.
-							locked = false;
-
-					}, (breakpoints.active('small') ? 0 : 500));
-
-			}, 250);
-
-	};
-
+			})();
 
 		// Hashchange event.
 			$window.on('hashchange', function(event) {
@@ -209,7 +117,57 @@
 
 					}
 
-					activatePanel($panel, $link);
+				// Deactivate all panels.
+					$panels.addClass('inactive');
+
+				// Deactivate all links.
+					$nav_links.removeClass('active');
+
+				// Activate target link.
+					$link.addClass('active');
+
+				// Set max/min height.
+					$main
+						.css('max-height', $main.height() + 'px')
+						.css('min-height', $main.height() + 'px');
+
+				// Delay.
+					setTimeout(function() {
+
+						// Hide all panels.
+							$panels.hide();
+
+						// Show target panel.
+							$panel.show();
+
+						// Set new max/min height.
+							$main
+								.css('max-height', $panel.outerHeight() + 'px')
+								.css('min-height', $panel.outerHeight() + 'px');
+
+						// Reset scroll.
+							$window.scrollTop(0);
+
+						// Delay.
+							window.setTimeout(function() {
+
+								// Activate target panel.
+									$panel.removeClass('inactive');
+
+								// Clear max/min height.
+									$main
+										.css('max-height', '')
+										.css('min-height', '');
+
+								// IE: Refresh.
+									$window.triggerHandler('--refresh');
+
+								// Unlock.
+									locked = false;
+
+							}, (breakpoints.active('small') ? 0 : 500));
+
+					}, 250);
 
 			});
 
