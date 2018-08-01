@@ -1,7 +1,7 @@
 {
   "baseURL": "/",
   "title": "Ben Fox, Consultant",
-  "theme": "hugo-astral-theme",
+  "theme": "hugo-initio-theme",
   "params": {
     "reveal_theme": "black",
     "revealjs": {
