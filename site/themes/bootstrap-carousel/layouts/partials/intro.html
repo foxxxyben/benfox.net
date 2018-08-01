@@ -2,7 +2,7 @@
 	<div class="carousel-inner">
 		{{ range $i, $p := (where .Site.Pages "Section" "intro") }}
 			<div class="carousel-item {{ cond (eq $i 0) "active" "" }}">
-				<img class="first-slide" src="{{ .Params.background }}">
+				<img class="first-slide" src="{{ .Dir }}/{{ .Params.background }}">
 				<div class="container">
 					<div class="carousel-caption {{ if .Params.align }}text-{{ .Params.align }}{{ end }}">
 						<h1>{{ .Title }}</h1>

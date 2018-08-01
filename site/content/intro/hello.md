@@ -4,6 +4,7 @@ hover: "Home"
 icon: "fa-home"
 class: "intro"
 weight: 1
+background: tricities.jpg
 ---
 <img align="left" src="benfox.jpg">
 # Hello, my name
