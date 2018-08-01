@@ -1,0 +1,6 @@
+<article id="{{ .Params.linktitle }}" class="panel {{ .Params.class }}" style="background-image: url({{ .Params.background }}); background-size: cover;">
+	<header>
+		<h1>{{ .Title | safeHTML }}</h1>
+		<p>{{ .Content | markdownify }}</p>
+	</header>
+</article>

@@ -1,8 +1,13 @@
 {
   "baseURL": "/",
   "title": "Ben Fox, Consultant",
-  "theme": "hugo-initio-theme",
+  "theme": "bootstrap-carousel",
   "params": {
+    "index": {
+      "intro": {
+        "partial": "intro.html"
+      },
+    },
     "DateForm": "Mon, 2. Jan. 2006",
     "reveal_theme": "black",
     "revealjs": {
