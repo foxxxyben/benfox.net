@@ -6,7 +6,7 @@
     "index": {
       "intro": {
         "partial": "intro.html"
-      },
+      }
     },
     "DateForm": "Mon, 2. Jan. 2006",
     "reveal_theme": "black",
