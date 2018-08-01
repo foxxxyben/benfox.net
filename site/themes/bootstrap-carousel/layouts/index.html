@@ -1,7 +1,7 @@
 {{ define "main" }}
 
   {{ range .Site.Params.index }}
-      {{ partial .partial $. }}
+      {{ partial .partial $ }}
   {{ end }}
 
 {{ end }}
