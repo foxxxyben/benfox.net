@@ -3,6 +3,7 @@
   "title": "Ben Fox, Consultant",
   "theme": "hugo-initio-theme",
   "params": {
+    "DateForm": "Mon, 2. Jan. 2006",
     "reveal_theme": "black",
     "revealjs": {
       "controls": true,
