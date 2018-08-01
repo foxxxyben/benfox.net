@@ -1,6 +1,6 @@
 <div id="intro" class="carousel slide" data-ride="carousel">
 	<div class="carousel-inner">
-		{{ range $i, $p := (where .Pages "Section" "intro") }}
+		{{ range $i, $p := (where .Data.Pages "Section" "intro") }}
 			<div class="carousel-item {{ cond (eq $i 0) "active" "" }}">
 				<img class="first-slide" src="{{ .Params.background }}">
 				<div class="container">
