@@ -5,7 +5,7 @@
 				<img class="first-slide" src="{{ .Dir }}/{{ .Params.background }}">
 				<div class="container">
 					<div class="carousel-caption {{ if .Params.align }}text-{{ .Params.align }}{{ end }}">
-						<h1>{{ .Title }}</h1>
+						<h1>{{ .Title | safeHTML }}</h1>
 						<p>{{ .Content }}</p>
 					</div>
 				</div>

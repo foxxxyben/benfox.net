@@ -6,7 +6,8 @@ class: "intro"
 weight: 1
 background: tricities.jpg
 ---
-<img align="left" src="benfox.jpg">
+
+<img src="benfox.jpg" class="img-circle" align="left" width="304" height="236">
 # Hello, my name
 # is Ben Fox
 
