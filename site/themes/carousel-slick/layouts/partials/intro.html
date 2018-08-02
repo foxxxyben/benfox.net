@@ -1,13 +1,14 @@
-<div id="intro" class="carousel">
-	{{ range $i, $p := (where .Site.Pages "Section" "intro") }}
-		<div class="panel {{ cond (eq $i 0) "banner" "spotlight medium" }} {{ if .Params.align }}{{ .Params.align }}{{ end }}" id="first">
-			<div class="content span-7 {{ if .Params.align }}align-{{ .Params.align }}{{ end }}">
-				<h1>{{ .Title | safeHTML }}</h1>
-				<p>{{ .Content }}</p>
-			</div>
-			<div class="image filtered tinted" data-position="top left">
-				<img src="{{ .Dir }}/{{ .Params.background }}"/>
-			</div>
-		</div>
-	{{ end }}
-</div>
+<section>
+  <div class="slider">
+  	{{ range $i, $p := (where .Site.Pages "Section" "intro") }}
+      <div>
+    		<article style="background-image: url({{ .Dir }}/{{ .Params.background }}); background-size: "cover" ">
+    			<div class="col-xs-7">
+            <h1>{{ .Title | safeHTML }}</h1>
+            <p>{{ .Content }}</p>
+    			</div>
+    		</article>
+    	</div>
+  	{{ end }}
+  </div>
+</section>
