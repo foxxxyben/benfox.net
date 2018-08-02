@@ -2,7 +2,7 @@
   <div class="slider">
   	{{ range $i, $p := (where .Site.Pages "Section" "intro") }}
       <div>
-    		<article style="background-image: url("{{ .Dir }}/{{ .Params.background }}"); background-size: cover">
+    		<article style="background-image: url({{ .Dir }}/{{ .Params.background }}); background-size: cover">
     			<div class="col-xs-7">
             <h1>{{ .Title | safeHTML }}</h1>
             <p>{{ .Content }}</p>
