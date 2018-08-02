@@ -1,7 +1,7 @@
 {
   "baseURL": "/",
   "title": "Ben Fox, Consultant",
-  "theme": "bootstrap-carousel",
+  "theme": "carousel-slick",
   "params": {
     "index": {
       "intro": {
