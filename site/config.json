@@ -1,7 +1,7 @@
 {
   "baseURL": "/",
   "title": "Ben Fox, Consultant",
-  "theme": "hugo-orbit",
+  "theme": "hugo-orbit-theme",
   "params": {
     "index": {
       "intro": {
