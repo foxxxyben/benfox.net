@@ -1,6 +1,6 @@
 <div id="intro" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
-    {{ range $i, $p := (where .Site.Pages "section" "intro")}}
+    {{ range $i, $p := (where .Site.Pages "Section" "intro")}}
       <li data-target="#intro" data-slide-to="{{ $i }}" {{ if eq $i 0 }} class="active" {{ end }}></li>
     {{ end }}
   </ol>
