@@ -1,100 +1,39 @@
-baseurl = "/"
-languageCode = "en-us"
-title = "benfox.net"
-theme = "hugo-astral-theme"
-# Enable Google Analytics by inserting your tracking code
-googleAnalytics = ""
-# Define how many posts should appear on a site
-paginate = 10
+baseURL = "/"
+title = "Ben Fox, Consultant"
+theme = "hugo-orbit-theme"
+DateForm = "Mon, 2. Jan. 2006"
 
 [params]
-	# To provide some metadata for search engines feel free to add a few
-	# information about you and your website.
-	name = "Your name"
-	description = "Describe your website"
 
-	# Format dates with Go's time formatting
-	date_format = "2006-01-02"
+  [params.profile]
+  name = "Ben Fox"
+  tagline = "Certified Autism Specialist"
 
-	# Add read time estimates in the format "X min read"
-	show_read_time = false
+  [params.contact]
 
-	# Add custom assets with their paths relative to the static folder
-	custom_js   = []
-	custom_css  = []
+    [[params.contact.list]]
+    class = "email"
+    icon = "fa-envelope"
+    url = "mailto: yourname@email.com"
+    title = "john.doe@website.com"
 
-[params.nav]
-	hide  = false
+  [params.pages]
+  disableKinds = [
+    "sitemap"
+  ]
 
-	[[params.nav.main]]
-	name = "Home"
-	icon = "fa-home"
-	hide = false
-	section = "home"
-	template = "home"
+    [[params.pages.index]]
+    Section = "Intro"
+    partial = "index/intro.html"
 
-	[[params.nav.main]]
-	name = "Education"
-	icon = "fa-user-graduate"
-	hide = false
-	section = "education"
-	template = "consulting"
+    [[params.pages.sidebar]]
+    Section = "Profile"
+    partial = "sidebar/profile.html"
 
-	[[params.nav.main]]
-	name = "Agriculture"
-	icon = "fa-leaf"
-	hide = false
-	section = "agriculture"
-	template = "consulting"
+    [[params.pages.sidebar]]
+    Section = "Contact"
+    partial = "sidebar/contact.html"
 
-	[[params.nav.main]]
-	name = "Technology"
-	icon = "fa-code-branch"
-	hide = false
-	section = "technology"
-	template = "consulting"
-
-	[[params.nav.main]]
-	name = "News"
-	icon = "fa-comment-dots"
-	hide  = true
-	title = "Latest News"
-
-	[[params.nav.main]]
-	name = "Contact"
-	icon = "fa-envelope"
-	hide  = false
-	template = "contact"
-	title = "Get In Touch"
-	content = "If you want to learn more about my experience and the services I can offer, or have a need in the community you would like me to collaborate or consult on, please fill out this brief contact form and I will quickly get in touch to meet with you and your organization. Thank you."
-
-
-	# This can be exact coordinates or a searchable address in google maps
-	gmaps_address = "4001 Kennedy Rd #7, Richland, WA 99352"
-	address = [
-		"4001 Kennedy Rd #7",
-		"Richland, WA 99352",
-		"United States"
-	]
-	phone = "509-591-7757"
-
-	# Since this template is static, the contact form uses www.formspree.io as a
-	# proxy. The form makes a POST request to their servers to send the actual
-	# email. Visitors can send up to a 1000 emails each month for free.
-    #
-    # What you need to do for the setup?
-    #
-    # - set your email address under 'email' below
-    # - upload the generated site to your server
-    # - send a dummy email yourself to confirm your account
-    # - click the confirm link in the email from www.formspree.io
-    # - you're done. Happy mailing!
-	email = "hello@example.com"
-
-	[params.contact.form]
-		# Set custom strings for the form if your native
-		# language isn't English
-		name = "Name"
-		email = "Email"
-		message = "Message"
-		submit = "Send message"
+    [[params.pages.sidebar]]
+    Section = "Education"
+    partial = "sidebar/education.html"

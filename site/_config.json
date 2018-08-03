@@ -16,7 +16,7 @@
         "url": "mailto: yourname@email.com",
         "title": "john.doe@website.com"
       }
-      ],
+      ]
     },
     "pages": {
       "index": [
@@ -41,7 +41,7 @@
       ],
       "disableKinds": [
         "sitemap"
-      ],
-    },
-  },
+      ]
+    }
+  }
 }

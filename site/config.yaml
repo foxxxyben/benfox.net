@@ -1,0 +1,27 @@
+baseURL: /
+title: 'Ben Fox, Consultant'
+theme: hugo-orbit-theme
+DateForm: 'Mon, 2. Jan. 2006'
+params:
+  profile:
+    name: Ben Fox
+    tagline: Certified Autism Specialist
+  contact:
+    list:
+      - class: email
+        icon: fa-envelope
+        url: 'mailto: yourname@email.com'
+        title: john.doe@website.com
+  pages:
+    index:
+      - Section: Intro
+        partial: index/intro.html
+    sidebar:
+      - Section: Profile
+        partial: sidebar/profile.html
+      - Section: Contact
+        partial: sidebar/contact.html
+      - Section: Education
+        partial: sidebar/education.html
+    disableKinds:
+      - sitemap
