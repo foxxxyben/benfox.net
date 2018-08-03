@@ -2,32 +2,46 @@
   "baseURL": "/",
   "title": "Ben Fox, Consultant",
   "theme": "hugo-orbit-theme",
+  "DateForm": "Mon, 2. Jan. 2006",
   "params": {
-    "index": {
-      "intro": {
-        "partial": "intro.html"
-      }
+    "profile": {
+      "name": "Ben Fox",
+      "tagline": "Certified Autism Specialist"
     },
-    "DateForm": "Mon, 2. Jan. 2006",
-    "reveal_theme": "black",
-    "revealjs": {
-      "controls": true,
-      "controlsLayout": "edges",
-      "progress": false,
-      "history": true,
-      "center": true,
-      "height": 800,
-      "width": 1500,
-      "parallaxBackgroundImage": "images/bg.jpg",
-      "parallaxBackgroundSize": "100% 100%"
-    }
+    "contact": {
+      "list": [
+        {
+        "class": "email",
+        "icon": "fa-envelope",
+        "url": "mailto: yourname@email.com",
+        "title": "john.doe@website.com"
+      }
+      ],
+    },
+    "pages": {
+      "index": [
+        {
+          "Section": "Intro",
+          "partial": "index/intro.html"
+        }
+      ],
+      "sidebar": [
+        {
+          "Section": "Profile",
+          "partial": "sidebar/profile.html"
+        },
+        {
+          "Section": "Contact",
+          "partial": "sidebar/contact.html"
+        },
+        {
+          "Section": "Education",
+          "partial": "sidebar/education.html"
+        }
+      ],
+      "disableKinds": [
+        "sitemap"
+      ],
+    },
   },
-  "disableKinds": [
-    "sitemap"
-  ],
-  "outputs": {
-    "home": [
-      "html"
-    ]
-  }
 }

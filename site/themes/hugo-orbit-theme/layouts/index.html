@@ -1,37 +1,17 @@
-<!DOCTYPE html>
-    {{ partial "lang.html" . }}
-<head>
-    {{ partial "head.html" . }}
-</head>
+{{ define "main" }}
 
-<body>
-    <div class="wrapper">
-
-    {{ partial "sidebar.html" . }}
-
-	<div class="main-wrapper">
-
-    {{ if .Site.Params.summary.enable }}
-	{{ partial "summary.html" . }}
-    {{ end }}
-
-    {{ if .Site.Params.experiences.enable }}
-    {{ partial "experiences.html" . }}
-    {{ end }}
-
-    {{ if .Site.Params.projects.enable }}
-    {{ partial "projects.html" . }}
-    {{ end }}
-
-    {{ if .Site.Params.skills.enable }}
-	{{ partial "skills.html" . }}
-    {{ end }}
-
-	</div><!--//main-body-->
+    <!--//sidebar-wrapper-->
+    <div class="sidebar-wrapper">
+      {{ range .Site.Params.pages.index }}
+        {{ partial .partial $ }}
+      {{ end }}
     </div>
 
-	{{ partial "footer.html" . }}
+    <!--//main-body-->
+    <div class="main-wrapper">
+      {{ range .Site.Params.pages.index }}
+        {{ partial .partial $ }}
+      {{ end }}
+    </div>
 
-    {{ partial "scripts.html" . }}
-</body>
-</html>
+{{ end }}
