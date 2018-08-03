@@ -3,6 +3,7 @@ title: 'Ben Fox, Consultant'
 theme: hugo-orbit-theme
 DateForm: 'Mon, 2. Jan. 2006'
 params:
+  styles: "styles.css"
   profile:
     name: Ben Fox
     tagline: Certified Autism Specialist
