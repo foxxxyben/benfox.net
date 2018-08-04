@@ -1,6 +1,6 @@
 <section class="section summary-section">
   {{ range (where .Site.Pages "Section" "summary") }}
-    <div>{{ .Params.head | safeHTML }}</div>
+    <div>{{ .Params.header | safeHTML }}</div>
     <h2 class="section-title">{{ .Title | safeHTML }}</h2>
     <div class="summary">
         <p>{{ .Content }}</p>

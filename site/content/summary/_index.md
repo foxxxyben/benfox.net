@@ -5,7 +5,7 @@ hover: "Home"
 icon: "fa-home"
 class: "intro"
 weight: 1
-head: "<a href="https://apps.ibcces.org/badges/v/65d52" target="_blank"><img width="100" style="float: right" src="/summary/cas.png" alt"Certified Autism Specialist"></a>"
+header: "<a href="https://apps.ibcces.org/badges/v/65d52" target="_blank"><img width="100" style="float: right" src="/summary/cas.png" alt"Certified Autism Specialist"></a>"
 ---
 In 2005 I began my career as a professional consultant to the New York City Public Schools, helping to develop city-wide peer-based support programs to adolescents on the Autism Spectrum. Later that same year I began my private practice helping families and private schools develop play-based social skills programs for young children with Autism.
 
