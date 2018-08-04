@@ -7,6 +7,7 @@ params:
   profile:
     name: Ben Fox
     tagline: Certified Autism Specialist
+    avatar: BenFox.png
   contact:
     list:
       - class: email
@@ -16,7 +17,7 @@ params:
   pages:
     index:
       - Section: Intro
-        partial: index/intro.html
+        partial: index/summary.html
     sidebar:
       - Section: Profile
         partial: sidebar/profile.html
